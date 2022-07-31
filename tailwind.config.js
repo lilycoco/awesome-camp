@@ -9,7 +9,7 @@ module.exports = {
       ...colors,
       transparent: "transparent",
       current: "currentColor",
-      brown: "#8E6239",
+      brown: "#734D2A",
       green: "#679955",
       yellow: "#E7DE55",
       "light-brown-gray": "#F1EEEA",

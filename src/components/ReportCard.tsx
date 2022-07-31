@@ -11,7 +11,9 @@ export default function ReportCard({
 }) {
   return (
     <div className="min-w-fit">
-      <img src={imgUrl} alt="report" className="w-80 mb-3" />
+      <div className="w-80 h-56 mb-3">
+        <img src={imgUrl} alt="report" className="h-full w-auto" />
+      </div>
       <p className="text-xs">{location}</p>
       <p className="text-xl">{spaceName}</p>
     </div>

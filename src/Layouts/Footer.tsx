@@ -1,18 +1,10 @@
 import React from "react";
+import { pageList } from "../lib/page";
 
 export default function Footer() {
-  const headerColums = [
-    { enTitle: "Home", jaTitle: "ホーム", url: "/" },
-    { enTitle: "User Guide", jaTitle: "ご利用方法", url: "/guide" },
-    { enTitle: "Schedule", jaTitle: "スケジュール", url: "/schedule" },
-    { enTitle: "Wedding Report", jaTitle: "レポート", url: "/guide" },
-    { enTitle: "About Us", jaTitle: "企業情報", url: "/guide" },
-    { enTitle: "Contact", jaTitle: "お問い合わせ", url: "/guide" },
-  ];
-
   return (
     <footer>
-      {headerColums.map((headerColumn, index) => (
+      {pageList.map((item, index) => (
         <div key={index}>
           <a
             className="App-link"
@@ -20,7 +12,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {headerColumn.enTitle}
+            {item.enTitle}
           </a>
         </div>
       ))}

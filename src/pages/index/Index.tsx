@@ -1,5 +1,7 @@
 import React from "react";
 import family from "../../assets/images/family.jpeg";
+import plan_1 from "../../assets/images/plan_1.jpeg";
+import plan_2 from "../../assets/images/plan_2.jpeg";
 import Title from "../../components/Title";
 import ReportCard from "../../components/ReportCard";
 import Button from "../../components/Button";
@@ -70,7 +72,27 @@ function App() {
           <Button label="view all" />
         </section>
         <section className="mb-24">
-          <Title enLabel="Plan" jaLabel="プラン" />
+          <Title enLabel="Plan" jaLabel="選べるプラン" />
+          <div className="flex p-10 gap-5">
+            <div className="w-1/2 relative ">
+              <div className="after:content-[''] after:absolute after:bg-gradient-to-r after:from-black after:top-0 after:left-0 after:w-1/2 after:h-full">
+                <img src={plan_1} alt="top" className="w-auto" />
+              </div>
+              <div className="absolute top-5 left-5 text-white">
+                <p className="mb-4">イベントセットのレンタル・設営のみ</p>
+                <p className="text-3xl">シンプルプラン</p>
+              </div>
+            </div>
+            <div className="w-1/2 relative ">
+              <div className="before:content-[''] before:absolute before:bg-gradient-to-r before:from-black before:top-0 before:left-0 before:w-1/2 before:h-full">
+                <img src={plan_2} alt="top" className="w-auto" />
+              </div>
+              <div className="absolute top-5 left-5 text-white">
+                <p className="mb-4">会場設営＋フード・音響・進行まで</p>
+                <p className="text-3xl">フルサポートプラン</p>
+              </div>
+            </div>
+          </div>
           <Button label="learn More" />
         </section>
         <section className="mb-24">

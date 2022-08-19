@@ -12,7 +12,7 @@ export default function ReccomendContent({
   src: string;
 }) {
   return (
-    <div className={"flex gap-20 scroll-reveal " + className}>
+    <div className={"flex justify-between w-full  scroll-reveal " + className}>
       <div className="w-112">
         <h2 className="mb-5 text-2xl font-bold">{title}</h2>
         <p>{description}</p>

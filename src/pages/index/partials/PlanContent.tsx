@@ -12,12 +12,14 @@ export default function PlanContent({
   src: string;
 }) {
   return (
-    <div className={"flex gap-20 " + className}>
-      <div className="w-96">
-        <h2 className="text-xl mb-3">{title}</h2>
-        <p>{description}</p>
+    <div className="w-1/2 relative ">
+      <div className="after:content-[''] after:absolute after:bg-gradient-to-r after:from-black after:top-0 after:left-0 after:w-1/2 after:h-full">
+        <img src={src} alt="top" className="w-auto" />
       </div>
-      <img src={src} alt="reccomend" className="w-80" />
+      <div className="absolute top-10 left-10 text-white">
+        <p className="text-5xl font-extrabold mb-3">{title}</p>
+        <p className="mb-4">{description}</p>
+      </div>
     </div>
   );
 }

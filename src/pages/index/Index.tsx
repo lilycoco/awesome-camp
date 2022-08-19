@@ -6,14 +6,15 @@ import Title from "../../components/Title";
 import ReportCard from "../../components/ReportCard";
 import Button from "../../components/Button";
 import ReccomendContent from "./partials/ReccomendContent";
-import ScrollReveal from "scrollreveal";
+// import ScrollReveal from "scrollreveal";
 import { reportList } from "../../lib/Report";
 import { reccomendList } from "../../lib/Reccomend";
+import PlanContent from "./partials/PlanContent";
 
-function App() {
-  React.useEffect(() => {
-    ScrollReveal().reveal(".scroll-reveal", { delay: 500, origin: "down" });
-  });
+export default function App() {
+  // React.useEffect(() => {
+  //   ScrollReveal().reveal(".scroll-reveal", { delay: 500, origin: "down" });
+  // });
 
   return (
     <div>
@@ -52,16 +53,8 @@ function App() {
             </p>
           </div>
         </section>
-        <section className="py-24 px-52">
-          <Title enLabel="Wedding Report" className="mb-20" />
-          <div className="flex gap-5 overflow-scroll mb-10">
-            {reportList.map((report, index) => (
-              <ReportCard key={index} report={report} />
-            ))}
-          </div>
-          <Button label="view all" />
-        </section>
-        <section className="py-24 px-52 flex flex-col gap-32 items-center w-full bg-light-brown-gray">
+
+        <section className="py-24 px-52 flex flex-col gap-36 items-center w-full bg-light-brown-gray">
           {reccomendList.map((item, index) => (
             <ReccomendContent
               className={index % 2 ? "flex-row-reverse" : ""}
@@ -72,72 +65,69 @@ function App() {
             />
           ))}
         </section>
+        <section className="py-24 px-52">
+          <Title enLabel="Wedding Report" className="mb-20" />
+          <div className="flex gap-5 overflow-scroll mb-10">
+            {reportList.map((report, index) => (
+              <ReportCard key={index} report={report} />
+            ))}
+          </div>
+          <Button label="view all" />
+        </section>
         <section className="py-24">
-          <Title
-            enLabel="Plan & Our Service"
-            jaLabel="選べるプラン"
-            className="ml-52"
-          />
+          <Title enLabel="Plan & Our Service" className="ml-52" />
           <div className="flex p-10 gap-5">
-            <div className="w-1/2 relative ">
-              <div className="after:content-[''] after:absolute after:bg-gradient-to-r after:from-black after:top-0 after:left-0 after:w-1/2 after:h-full">
-                <img src={plan_1} alt="top" className="w-auto" />
-              </div>
-              <div className="absolute top-5 left-5 text-white">
-                <p className="mb-4">イベントセットのレンタル・設営のみ</p>
-                <p className="text-3xl">シンプルプラン</p>
-              </div>
-            </div>
-            <div className="w-1/2 relative ">
-              <div className="before:content-[''] before:absolute before:bg-gradient-to-r before:from-black before:top-0 before:left-0 before:w-1/2 before:h-full">
-                <img src={plan_2} alt="top" className="w-auto" />
-              </div>
-              <div className="absolute top-5 left-5 text-white">
-                <p className="mb-4">会場設営＋フード・音響・進行まで</p>
-                <p className="text-3xl">フルサポートプラン</p>
-              </div>
-            </div>
+            <PlanContent
+              title="Plans"
+              description="プランのご紹介"
+              src={plan_1}
+            />
+            <PlanContent
+              title="Our Servise"
+              description="私たちが出来ること"
+              src={plan_2}
+            />
           </div>
           <Button label="learn More" />
         </section>
-        <section className="mb-24">
-          <Title enLabel="Schedule" jaLabel="スケジュール" />
-          <div>
-            <p>
-              <span>Step 1</span>お問い合わせ
-            </p>
-            <p>まずは、お問合せフォームよりお気軽にご連絡下さい。</p>
-            <p>
-              <span>Step 2</span>お打ち合わせ
-            </p>
-            <p>
-              コンセプトやご予算、開催場所など、ご要望をお伺いさせていただきます。
-              必要に応じて開催場所や、お食事、楽しいフォトバスやポートレートマシーンといったゲストと一緒に楽しめるコンテンツなどのご紹介もさせていただいております。（紹介料は頂戴しておりません。）
-              『必要なものだけを手配します』をコンセプトとしておりますので、ご自身で準備されるアイテムの持ち込みも歓迎です。
-            </p>
-            <p>
-              <span>Step 1</span>パーティ当日
-            </p>
-            <p>
-              本番は、スタッフによる設営（前日or当日の早朝）とサポートで、オリジナリティ溢れるウェディングパーティーを一緒に作り上げます。
-            </p>
+        <section className="py-24 px-52 bg-light-brown-gray">
+          <Title enLabel="Schedule" jaLabel="スケジュール" className="mb-20" />
+          <div className="w-160 m-auto bg-white p-10">
+            <div>
+              <p>
+                <span>Step 1</span>お問い合わせ
+              </p>
+              <p>まずは、お問合せフォームよりお気軽にご連絡下さい。</p>
+              <p>
+                <span>Step 2</span>お打ち合わせ
+              </p>
+              <p>
+                コンセプトやご予算、開催場所など、ご要望をお伺いさせていただきます。
+                必要に応じて開催場所や、お食事、楽しいフォトバスやポートレートマシーンといったゲストと一緒に楽しめるコンテンツなどのご紹介もさせていただいております。（紹介料は頂戴しておりません。）
+                『必要なものだけを手配します』をコンセプトとしておりますので、ご自身で準備されるアイテムの持ち込みも歓迎です。
+              </p>
+              <p>
+                <span>Step 1</span>パーティ当日
+              </p>
+              <p>
+                本番は、スタッフによる設営（前日or当日の早朝）とサポートで、オリジナリティ溢れるウェディングパーティーを一緒に作り上げます。
+              </p>
+            </div>
+            <Button label="learn More" />
           </div>
-          <Button label="learn More" />
         </section>
-        <section className="mb-24">
+        <section className="mb-24 py-24 px-52">
           <Title enLabel="Media Coverage" jaLabel="メディア掲載情報" />
         </section>
-        <a
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
       </div>
     </div>
   );
 }
-
-export default App;

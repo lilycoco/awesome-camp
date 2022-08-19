@@ -16,7 +16,7 @@ export default function ReportCard({
         <img src={imgUrl} alt="report" className="h-full w-auto" />
       </div>
       <p className="text-xs font-bold">{date}</p>
-      <p>{`${spaceName} (${location})`}</p>
+      <p className="">{`${spaceName} (${location})`}</p>
     </div>
   );
 }

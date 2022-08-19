@@ -13,13 +13,11 @@ export default function ReccomendContent({
 }) {
   return (
     <div className={"flex gap-20 scroll-reveal " + className}>
-      <div className="w-96">
-        <h2 className="mb-3 text-2xl text-brown">{title}</h2>
+      <div className="w-112">
+        <h2 className="mb-5 text-2xl font-bold">{title}</h2>
         <p>{description}</p>
       </div>
-      <div className="w-80">
-        <img src={src} alt="reccomend" className=" w-full h-auto" />
-      </div>
+      <img src={src} alt="reccomend" className="w-125 h-80 object-cover" />
     </div>
   );
 }

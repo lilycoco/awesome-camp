@@ -10,9 +10,8 @@ export default function Title({
   className?: string;
 }) {
   return (
-    <h1 className={"text-brown w-fit m-auto text-center mb-10 " + className}>
-      <p className="text-3xl">{enLabel}</p>
-      <p>{jaLabel}</p>
+    <h1 className={"w-fit text-center mb-10 font-sans text-6xl " + className}>
+      {enLabel}
     </h1>
   );
 }

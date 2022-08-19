@@ -9,7 +9,7 @@ export default function Button({
 }) {
   return (
     <button
-      className="bg-green text-white min-w-[200px] text-base h-10 m-auto block"
+      className="bg-white text-green min-w-[200px] h-10 m-auto block border-2 border-green"
       onClick={() => {}}
     >
       {label?.toUpperCase()}

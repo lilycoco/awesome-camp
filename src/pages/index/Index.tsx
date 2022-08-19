@@ -17,36 +17,51 @@ function App() {
 
   return (
     <div>
-      <img src={family} alt="top" className="w-full" />
+      <img src={family} alt="top" className="w-full h-screen object-cover" />
       <div className="m-auto">
-        <section className="mb-24 m-auto">
-          <Title enLabel="Awesome Outdoor Wedding" className="my-10" />
-          <p className="text-center mb-20 leading-[3rem]">
+        <section className="py-24 px-52 m-auto">
+          <Title
+            enLabel="Have an Awesome Outdoor Wedding!"
+            className="my-10 m-auto text-5xl"
+          />
+          <p className="text-center leading-[3rem]">
             おふたりの好きな場所で
             <br />
             好きなスタイルで
             <br />
-            好きな人達と
+            大切な人たちと
             <br />
-            大切な時間を過ごして欲しい。
+            最高な時間を過ごして欲しい。
+            <br /> そんな思いを持って
             <br /> オーダーメイドでおふたりらしい空間作りの
             <br />
             お手伝いをさせていただきます。
             <br />
           </p>
-          <div className="w-96 m-auto">
-            <div className="mb-10 scroll-reveal">
-              <h2 className="text-xl mb-3">Awesome Camp & Glamping は</h2>
-              <p className="">
-                イベント・撮影等のプランニングからキャンプ、グランピングのレンタル事業、当日の設営、運営、美術監督まで行うアウトドアのスペシャリストです。
-                これまでアウトドアウェディングはもちろんのこと、CM・PV、テレビ番組、広告撮影や大型商業施設のイベント等、数多くのアウトドアシーンをプロデュースしてきました。
-                そんな私たちが培ってきたノウハウを活かして、フォトウェディングから、少人数でのプチパーティー、野外フェスのテイストを盛り込んだオリジナリティ溢れるアウトドアウェディングまで、ご希望のアウトドア空間作りをプロデュースします。
-              </p>
-            </div>
-            <Button label="learn More" />
+        </section>
+        <section className="py-24 px-52 bg-light-brown-gray">
+          <Title enLabel="Concept" />
+          <div className="m-auto mb-10 scroll-reveal bg-white p-10 w-160">
+            <h2 className="text-xl mb-5 font-bold">
+              Awesome Camp & Glamping は
+            </h2>
+            <p className="">
+              イベント・撮影等のプランニングからキャンプ、グランピングのレンタル事業、当日の設営、運営、美術監督まで行うアウトドアのスペシャリストです。
+              これまでアウトドアウェディングはもちろんのこと、CM・PV、テレビ番組、広告撮影や大型商業施設のイベント等、数多くのアウトドアシーンをプロデュースしてきました。
+              そんな私たちが培ってきたノウハウを活かして、フォトウェディングから、少人数でのプチパーティー、野外フェスのテイストを盛り込んだオリジナリティ溢れるアウトドアウェディングまで、ご希望のアウトドア空間作りをプロデュースします。
+            </p>
           </div>
         </section>
-        <section className="mb-24 flex flex-col gap-32 items-center w-full bg-light-brown-gray py-24">
+        <section className="py-24 px-52">
+          <Title enLabel="Wedding Report" className="mb-20" />
+          <div className="flex gap-5 overflow-scroll mb-10">
+            {reportList.map((report, index) => (
+              <ReportCard key={index} report={report} />
+            ))}
+          </div>
+          <Button label="view all" />
+        </section>
+        <section className="py-24 px-52 flex flex-col gap-32 items-center w-full bg-light-brown-gray">
           {reccomendList.map((item, index) => (
             <ReccomendContent
               className={index % 2 ? "flex-row-reverse" : ""}
@@ -57,22 +72,12 @@ function App() {
             />
           ))}
         </section>
-        <section className="mb-24">
-          <Title enLabel="Wedding Report" jaLabel="ウェディングレポート" />
-          <div className="flex gap-5 overflow-scroll ml-24 mb-10">
-            {reportList.map((report, index) => (
-              <ReportCard
-                key={index}
-                imgUrl={report.imageUrl}
-                location={report.location}
-                spaceName={report.spaceName}
-              />
-            ))}
-          </div>
-          <Button label="view all" />
-        </section>
-        <section className="mb-24">
-          <Title enLabel="Plan" jaLabel="選べるプラン" />
+        <section className="py-24">
+          <Title
+            enLabel="Plan & Our Service"
+            jaLabel="選べるプラン"
+            className="ml-52"
+          />
           <div className="flex p-10 gap-5">
             <div className="w-1/2 relative ">
               <div className="after:content-[''] after:absolute after:bg-gradient-to-r after:from-black after:top-0 after:left-0 after:w-1/2 after:h-full">

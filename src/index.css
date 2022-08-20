@@ -18,3 +18,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@layer components {
+  .balloon:before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    right: -25px;
+    margin-top: 0px;
+    border: 16px solid transparent;
+    border-left: 35px solid #e7de55;
+    z-index: 0;
+    transform: rotate(40deg);
+  }
+}

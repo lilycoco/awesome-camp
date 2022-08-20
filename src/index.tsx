@@ -14,6 +14,9 @@ root.render(
     <Header />
     <Index />
     <Footer />
+    <div className="balloon fixed bottom-14 right-14 font-sans text-2xl py-4 px-6 rounded-full bg-yellow shadow-md">
+      Contact Us
+    </div>
   </React.StrictMode>
 );
 

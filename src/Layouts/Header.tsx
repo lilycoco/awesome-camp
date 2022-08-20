@@ -6,7 +6,7 @@ import instagram from "../assets/logo/instagram.png";
 
 export default function Header() {
   return (
-    <header className="p-5 sticky top-0 bg-white">
+    <header className="p-5 sticky top-0 bg-white font-['Helvetica']">
       <img src={awesome} alt="logo" className="w-20 mb-3 m-auto" />
       <div className="flex justify-center gap-10 whitespace-nowrap items-center">
         {pageList.map((item, index) => (

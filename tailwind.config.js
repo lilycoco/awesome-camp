@@ -22,6 +22,7 @@ module.exports = {
       brown: "#734D2A",
       green: "#4A703D",
       yellow: "#E7DE55",
+      black: "#2B2B2B",
       "light-brown-gray": "#F1EEEA",
     },
   },

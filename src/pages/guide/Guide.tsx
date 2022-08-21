@@ -5,6 +5,12 @@ import plan_2 from "../../assets/images/plan_2.jpeg";
 import { serviceList } from "../../lib/services";
 
 export default function Guide() {
+  let myRef: (HTMLDivElement | null)[] = [];
+
+  const onClick = (index: number) => {
+    myRef[index]?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   const SubTitle = ({ en, ja }: { en: string; ja: string }) => (
     <div className="mb-20">
       <div className="flex items-center mb-2">
@@ -38,7 +44,7 @@ export default function Guide() {
       <div className="w-full">
         <h2 className="mb-5 text-2xl font-bold">{title}</h2>
         <p>{description}</p>
-        <p className="rounded-md mt-4">
+        <div className="rounded-md mt-4">
           <span className="font-bold">
             {"[ こんなおふたりにおすすめです ]"}
           </span>
@@ -46,7 +52,7 @@ export default function Guide() {
             <li>{reccomend1}</li>
             <li>{reccomend2}</li>
           </ul>
-        </p>
+        </div>
       </div>
       <img
         src={src}
@@ -98,26 +104,28 @@ export default function Guide() {
           />
           <div className="mb-20">
             {serviceList.map(({ title }, index) => (
-              <a
+              <button
+                key={index}
                 className="w-full text-xl p-2 px-4 shadow-md bg-white mb-2 block max-w-2xl text-left"
-                href={`#service${index}`}
+                onClick={() => onClick(index)}
               >
                 <span className="mr-6 text-lg">{`0${index + 1}.`}</span>
                 {title}
-              </a>
+              </button>
             ))}
           </div>
           {serviceList.map(({ title, description, img }, index) => (
-            <div className="flex -gap-10 mb-10">
+            <div key={index} className="flex -gap-10 mb-10">
               <div
                 className="w-full p-8 shadow-md bg-white mb-2 block max-w-2xl rounded-lg z-10 -mr-14 opacity-90"
                 id={`service${index}`}
+                ref={(ref) => (myRef[index] = ref)}
               >
                 <h3 className="text-xl mb-4 font-bold">
                   <span className="mr-6 text-2xl">{`0${index + 1}.`}</span>
                   {title}
                 </h3>
-                <p>{description}</p>
+                <div>{description}</div>
               </div>
               <img
                 src={img}

@@ -86,11 +86,13 @@ export default function Home() {
               title="Plans"
               description="プランのご紹介"
               src={plan_1}
+              url="/guide"
             />
             <PlanContent
               title="Our Servise"
               description="私たちが出来ること"
               src={plan_2}
+              url="/guide"
             />
           </div>
           <Button label="More" />

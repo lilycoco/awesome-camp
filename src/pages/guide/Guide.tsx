@@ -85,7 +85,7 @@ export default function Guide() {
           />
         </div>
         <div className="p-5 border-2 border-double border-black rounded-lg mx-10 relative">
-          <div className="absolute -top-12 -left-12 font-sans text-2xl w-20 h-20 flex items-center justify-center rounded-full bg-yellow">
+          <div className="absolute -top-12 -left-12 font-oleo text-2xl w-20 h-20 flex items-center justify-center rounded-full bg-yellow">
             Tips!
           </div>
           <p>

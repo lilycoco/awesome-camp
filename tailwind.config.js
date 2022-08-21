@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Oleo Script", "cursive", ...defaultTheme.fontFamily.sans],
+        oleo: ["Oleo Script", "cursive", ...defaultTheme.fontFamily.sans],
       },
       width: {
         112: "28rem",

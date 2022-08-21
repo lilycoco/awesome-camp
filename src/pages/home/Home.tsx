@@ -12,6 +12,7 @@ import { reportList } from "../../lib/report";
 import { coverageList } from "../../lib/coverage";
 import { reccomendList } from "../../lib/reccomend";
 import PlanContent from "./partials/PlanContent";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   // React.useEffect(() => {
@@ -77,7 +78,9 @@ export default function Home() {
               <ReportCard key={index} report={report} />
             ))}
           </div>
-          <Button label="More" />
+          <Link to="/report">
+            <Button label="More" />
+          </Link>
         </section>
         <section className="py-24 m-auto">
           <Title enLabel="Plan & Our Service" className="ml-52" />
@@ -95,7 +98,6 @@ export default function Home() {
               url="/guide"
             />
           </div>
-          <Button label="More" />
         </section>
         <section className="bg-light-brown-gray">
           <div className="py-24 max-w-screen-lg m-auto">
@@ -132,7 +134,9 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <Button label="More" className="mb-10" />
+              <Link to="/schedule">
+                <Button label="More" className="mb-10" />
+              </Link>
               <img src={frame} alt="youtube" className="" />
             </div>
           </div>

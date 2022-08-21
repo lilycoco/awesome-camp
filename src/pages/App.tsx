@@ -9,10 +9,12 @@ import Header from "../Layouts/Header";
 import Footer from "../Layouts/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
+import ScrollToTop from "../ScrollToTop";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

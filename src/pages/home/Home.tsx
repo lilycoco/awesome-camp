@@ -13,7 +13,7 @@ import { coverageList } from "../../lib/coverage";
 import { reccomendList } from "../../lib/reccomend";
 import PlanContent from "./partials/PlanContent";
 
-export default function Index() {
+export default function Home() {
   // React.useEffect(() => {
   //   ScrollReveal().reveal(".scroll-reveal", { delay: 500, origin: "down" });
   // });
@@ -56,13 +56,13 @@ export default function Index() {
           </div>
         </section>
         <section className="py-24 px-52 flex flex-col gap-36 items-center w-full bg-light-brown-gray">
-          {reccomendList.map((item, index) => (
+          {reccomendList.map(({ title, description, src }, index) => (
             <ReccomendContent
               className={index % 2 ? "flex-row-reverse" : ""}
               key={index}
-              title={item.title}
-              description={item.description}
-              src={item.src}
+              title={title}
+              description={description}
+              src={src}
             />
           ))}
         </section>
@@ -128,25 +128,23 @@ export default function Index() {
         <section className="mb-24 py-24 px-52">
           <Title enLabel="Media Coverage" jaLabel="メディア掲載情報" />
           <div className="border-2 border-black px-10 py-5 rounded-md divide-y-2 > *">
-            {coverageList.reverse().map(({ date, description, url }) => (
-              <>
-                <div className="flex py-4">
-                  <span className="font-bold mr-10">{date}</span>
-                  <div>
-                    <div>{description}</div>
-                    {url && (
-                      <a
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-700"
-                      >
-                        {url}
-                      </a>
-                    )}
-                  </div>
+            {coverageList.reverse().map(({ date, description, url }, index) => (
+              <div className="flex py-4" key={index}>
+                <span className="font-bold mr-10">{date}</span>
+                <div>
+                  <div>{description}</div>
+                  {url && (
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-700"
+                    >
+                      {url}
+                    </a>
+                  )}
                 </div>
-              </>
+              </div>
             ))}
           </div>
         </section>

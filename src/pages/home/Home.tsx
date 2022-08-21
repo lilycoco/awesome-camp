@@ -140,24 +140,26 @@ export default function Home() {
         <section className="py-24 max-w-screen-lg m-auto pb-32">
           <Title enLabel="Media Coverage" jaLabel="メディア掲載情報" />
           <div className="border-2 border-black px-10 py-5 rounded-md divide-y-2 > *">
-            {coverageList.reverse().map(({ date, description, url }, index) => (
-              <div className="flex py-4" key={index}>
-                <span className="font-bold mr-10">{date}</span>
-                <div>
-                  <div>{description}</div>
-                  {url && (
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-700"
-                    >
-                      {url}
-                    </a>
-                  )}
+            {[...coverageList]
+              .reverse()
+              .map(({ date, description, url }, index) => (
+                <div className="flex py-4" key={index}>
+                  <span className="font-bold mr-10">{date}</span>
+                  <div>
+                    <div>{description}</div>
+                    {url && (
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-700"
+                      >
+                        {url}
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </section>
       </div>

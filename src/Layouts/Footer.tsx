@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="font-['Helvetica'] bg-[#F7F7F7]">
       <div className="pt-10 pb-16 px-52 flex items-start gap-32">
         <div className="flex items-center gap-5">
-          <p>Find Us On:</p>
+          <p className="whitespace-nowrap">Find Us On:</p>
           <img src={youtube} alt="youtube" className="h-4" />
           <img src={instagram} alt="youtube" className="h-4" />
         </div>

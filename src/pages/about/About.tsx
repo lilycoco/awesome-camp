@@ -17,8 +17,8 @@ export default function About() {
 
   return (
     <div className="bg-light-brown-gray">
-      <Title enLabel="About Us" className="m-auto pt-24" />
-      <section className="py-24 max-w-screen-lg m-auto">
+      <Title enLabel="About Us" className="m-auto pt-24 pb-16" />
+      <section className="pb-24 max-w-screen-lg m-auto">
         <div className="mb-36">
           <div className="font-['Noto_Sans'] text-3xl mb-14">Company</div>
           <div className="max-w-2xl border-t border-gray-400">

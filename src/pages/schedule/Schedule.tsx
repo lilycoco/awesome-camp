@@ -15,7 +15,7 @@ export default function Schedule() {
                 index + 1
               }`}</div>
               <div key={index} className="mt-5 mb-16 max-w-screen-sm">
-                <h2 className="font-bold text-xl mb-4">{title}</h2>
+                <h2 className="font-bold text-2xl mb-4">{title}</h2>
                 <div>{description}</div>
               </div>
             </div>

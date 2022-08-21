@@ -5,9 +5,9 @@ import Title from "../../components/Title";
 export default function Contact() {
   return (
     <div className="bg-light-brown-gray">
-      <Title enLabel="Contact" className="m-auto pt-24" />
-      <section className="max-w-screen-md m-auto y-10 pb-24">
-        <p className="mb-10">お気軽にお問合せください。</p>
+      <Title enLabel="Contact" className="m-auto pt-24 mb-24" />
+      <section className="max-w-screen-md m-auto pb-24">
+        <p className="mb-10">どんなご質問でも、お気軽にお問合せください。</p>
         <form>
           <div className="pb-8">
             <label className="text-sm font-bold">お名前</label>
@@ -48,22 +48,23 @@ export default function Contact() {
               name="ご利用時期"
               className="px-4 py-3 rounded-md block w-full max-w-sm"
             >
-              <option>シンプルプラン</option>
-              <option>フルサポートプラン</option>
+              <option value="none" selected disabled hidden>
+                選択してください
+              </option>
+              <option value="1">シンプルプラン（設営のみ）</option>
+              <option value="2">フルサポートプラン</option>
             </select>
           </div>
           <div className="pb-8">
             <label className="text-sm font-bold">
               ご利用時期（お決まりの場合）
             </label>
-            <select
-              name="ご利用時期"
-              className="px-4 py-3 rounded-md block w-full max-w-sm"
-            >
-              <option>選択肢のサンプル1</option>
-              <option>選択肢のサンプル2</option>
-              <option>選択肢のサンプル3</option>
-            </select>
+            <input
+              type="month"
+              name="calendar"
+              min="2022-08"
+              className="px-4 rounded-md block w-full max-w-sm"
+            ></input>
           </div>
           <div className="pb-8">
             <label className="text-sm font-bold">

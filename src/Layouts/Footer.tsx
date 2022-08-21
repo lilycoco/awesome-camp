@@ -3,6 +3,7 @@ import { pageList } from "../lib/page";
 import youtube from "../assets/logo/youtube.png";
 import instagram from "../assets/logo/instagram.png";
 import awesome from "../assets/logo/awesome.png";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -14,18 +15,11 @@ export default function Footer() {
           <img src={instagram} alt="youtube" className="h-4" />
         </div>
         <div className="flex flex-col flex-wrap h-48 w-72 justify-between">
-          {pageList.map((item, index) => (
-            <div key={index}>
-              <a
-                className="flex flex-col w-32"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="font-bold">{item.enTitle}</span>
-                <span className="text-xs"> {item.jaTitle}</span>
-              </a>
-            </div>
+          {pageList.map(({ enTitle, jaTitle, url }, index) => (
+            <Link key={index} className="flex flex-col w-32" to={url}>
+              <span className="font-bold">{enTitle}</span>
+              <span className="text-xs"> {jaTitle}</span>
+            </Link>
           ))}
         </div>
         <div>

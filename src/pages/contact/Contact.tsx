@@ -4,7 +4,7 @@ import Title from "../../components/Title";
 
 export default function Contact() {
   return (
-    <div className="bg-light-brown-gray">
+    <div className="bg-light-brown-gray px-4">
       <Title enLabel="Contact" className="m-auto pt-24 mb-24" />
       <section className="max-w-screen-md m-auto pb-24">
         <p className="mb-10">どんなご質問でも、お気軽にお問合せください。</p>
@@ -15,12 +15,12 @@ export default function Contact() {
               <input
                 placeholder="姓"
                 type="text"
-                className="rounded-md px-4 w-full"
+                className="rounded-md px-4 py-1 w-full"
               />
               <input
                 placeholder="名"
                 type="text"
-                className="rounded-md px-4 w-full"
+                className="rounded-md px-4 py-1 w-full"
               />
             </div>
           </div>
@@ -29,7 +29,7 @@ export default function Contact() {
             <input
               placeholder="例）example@awesome.co.jp"
               type="text"
-              className="rounded-md px-4 w-full"
+              className="rounded-md px-4 py-1 w-full"
             />
           </div>
           <div className="pb-8">
@@ -37,7 +37,7 @@ export default function Contact() {
             <input
               placeholder="例）0123-4567-8900"
               type="text"
-              className="rounded-md px-4 w-full max-w-sm block"
+              className="rounded-md px-4 py-1 w-full max-w-sm block"
             />
           </div>
           <div className="pb-8">
@@ -46,9 +46,10 @@ export default function Contact() {
             </label>
             <select
               name="ご利用時期"
-              className="px-4 py-3 rounded-md block w-full max-w-sm"
+              className="px-4 py-4 rounded-md block w-full max-w-sm"
+              defaultValue="none"
             >
-              <option value="none" selected disabled hidden>
+              <option value="none" disabled>
                 選択してください
               </option>
               <option value="1">シンプルプラン（設営のみ）</option>
@@ -63,7 +64,7 @@ export default function Contact() {
               type="month"
               name="calendar"
               min="2022-08"
-              className="px-4 rounded-md block w-full max-w-sm"
+              className="px-4 py-1 rounded-md block w-full max-w-sm"
             ></input>
           </div>
           <div className="pb-8">
@@ -73,10 +74,9 @@ export default function Contact() {
             <input
               placeholder="都道府県名、施設名等"
               type="p"
-              className="rounded-md px-4 w-full"
+              className="rounded-md px-4 py-1 w-full"
             />
           </div>
-
           <div className="pb-8">
             <label className="text-sm font-bold">お問い合わせ内容</label>
             <textarea

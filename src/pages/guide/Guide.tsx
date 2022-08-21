@@ -2,10 +2,11 @@ import React from "react";
 import Title from "../../components/Title";
 import plan_1 from "../../assets/images/plan_1.jpeg";
 import plan_2 from "../../assets/images/plan_2.jpeg";
+import { serviceList } from "../../lib/services";
 
 export default function Guide() {
   const SubTitle = ({ en, ja }: { en: string; ja: string }) => (
-    <div className="mb-24">
+    <div className="mb-20">
       <div className="flex items-center mb-2">
         <h2 className="text-4xl font-bold mr-5 whitespace-nowrap">{en}</h2>
         <div className="w-full border-t border-black" />
@@ -58,7 +59,7 @@ export default function Guide() {
   return (
     <div>
       <Title enLabel="User Guide" className="m-auto pt-24" />
-      <section className="py-24 px-52">
+      <section className="py-24 max-w-screen-lg m-auto">
         <SubTitle en="Plans" ja="選べるプラン" />
         <div className="pb-16">
           <Plan
@@ -89,8 +90,43 @@ export default function Guide() {
           </p>
         </div>
       </section>
-      <section className="py-24 px-52">
-        <SubTitle en="Our Service" ja="Awesome Camp & Glamping ができるコト" />
+      <section className="bg-light-brown-gray">
+        <div className="py-24 max-w-screen-lg m-auto">
+          <SubTitle
+            en="Our Service"
+            ja="Awesome Camp & Glamping ができるコト"
+          />
+          <div className="mb-20">
+            {serviceList.map(({ title }, index) => (
+              <a
+                className="w-full text-xl p-2 px-4 shadow-md bg-white mb-2 block max-w-2xl text-left"
+                href={`#service${index}`}
+              >
+                <span className="mr-6 text-lg">{`0${index + 1}.`}</span>
+                {title}
+              </a>
+            ))}
+          </div>
+          {serviceList.map(({ title, description, img }, index) => (
+            <div className="flex -gap-10 mb-10">
+              <div
+                className="w-full p-8 shadow-md bg-white mb-2 block max-w-2xl rounded-lg z-10 -mr-14 opacity-90"
+                id={`service${index}`}
+              >
+                <h3 className="text-xl mb-4 font-bold">
+                  <span className="mr-6 text-2xl">{`0${index + 1}.`}</span>
+                  {title}
+                </h3>
+                <p>{description}</p>
+              </div>
+              <img
+                src={img}
+                alt="reccomend"
+                className="max-w-sm h-72 object-cover"
+              />
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );

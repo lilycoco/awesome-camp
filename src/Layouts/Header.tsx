@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="p-5 sticky top-0 bg-white font-['Helvetica']">
+    <header className="p-5 sticky top-0 bg-white font-['Helvetica'] z-20 shadow-sm">
       <img src={awesome} alt="logo" className="w-20 mb-3 m-auto" />
       <nav className="flex justify-center gap-10 whitespace-nowrap items-center">
         {pageList.map(({ enTitle, jaTitle, url }, index) => (

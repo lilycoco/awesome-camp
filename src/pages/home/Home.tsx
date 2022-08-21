@@ -13,7 +13,7 @@ import { coverageList } from "../../lib/coverage";
 import { reccomendList } from "../../lib/reccomend";
 import PlanContent from "./partials/PlanContent";
 
-export default function App() {
+export default function Index() {
   // React.useEffect(() => {
   //   ScrollReveal().reveal(".scroll-reveal", { delay: 500, origin: "down" });
   // });
@@ -135,7 +135,12 @@ export default function App() {
                   <div>
                     <div>{description}</div>
                     {url && (
-                      <a href={url} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-700"
+                      >
                         {url}
                       </a>
                     )}

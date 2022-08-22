@@ -1,4 +1,5 @@
 import React from "react";
+import Balloon from "../../components/Balloon";
 import Title from "../../components/Title";
 import { scheduleList } from "../../lib/schedule";
 
@@ -22,6 +23,7 @@ export default function Schedule() {
           ))}
         </div>
       </section>
+      <Balloon />
     </div>
   );
 }

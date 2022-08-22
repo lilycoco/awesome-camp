@@ -13,6 +13,7 @@ import { coverageList } from "../../lib/coverage";
 import { reccomendList } from "../../lib/reccomend";
 import PlanContent from "./partials/PlanContent";
 import { Link } from "react-router-dom";
+import Balloon from "../../components/Balloon";
 
 export default function Home() {
   // React.useEffect(() => {
@@ -167,6 +168,7 @@ export default function Home() {
           </div>
         </section>
       </div>
+      <Balloon />
     </div>
   );
 }

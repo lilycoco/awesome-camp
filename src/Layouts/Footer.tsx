@@ -42,9 +42,9 @@ export default function Footer() {
             </Link>
           ))}
         </div>
-        <div>
+        <Link to="/">
           <img src={awesome} alt="logo" className="mb-3 w-32 m-auto" />
-        </div>
+        </Link>
       </div>
       <p className="text-center text-sm pb-5">©︎2022 Awesome Camp & Glamping</p>
     </footer>

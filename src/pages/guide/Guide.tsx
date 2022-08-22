@@ -3,6 +3,7 @@ import Title from "../../components/Title";
 import plan_1 from "../../assets/images/plan_1.jpeg";
 import plan_2 from "../../assets/images/plan_2.jpeg";
 import { serviceList } from "../../lib/services";
+import Balloon from "../../components/Balloon";
 
 export default function Guide() {
   let myRef: (HTMLDivElement | null)[] = [];
@@ -136,6 +137,7 @@ export default function Guide() {
           ))}
         </div>
       </section>
+      <Balloon />
     </div>
   );
 }

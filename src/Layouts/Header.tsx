@@ -9,7 +9,9 @@ import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <header className="p-5 sticky bg-white font-['Helvetica'] z-20 shadow-sm -top-16 opacity-90">
-      <img src={awesome} alt="logo" className="w-20 mb-3 m-auto" />
+      <Link to="/">
+        <img src={awesome} alt="logo" className="w-20 mb-3 m-auto" />
+      </Link>
       <nav className="flex justify-center gap-10 whitespace-nowrap items-center sticky top-0">
         {pageList.map(({ enTitle, jaTitle, url }, index) => (
           <Link key={index} to={url} className="flex flex-col items-center">

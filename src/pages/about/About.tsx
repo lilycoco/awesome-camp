@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import Balloon from "../../components/Balloon";
 import Title from "../../components/Title";
 
 export default function About() {
@@ -45,17 +46,45 @@ export default function About() {
           <div className="max-w-2xl border-t border-gray-400">
             <InfoContainer
               title="2014.04"
-              description="「Awesome Barbecue.com」 ウェブメディア開設"
+              description={
+                <ul>
+                  <li>「Awesome Barbecue.com」 ウェブメディア開設</li>
+                  <li>
+                    <a
+                      href="http://awesomebarbecue.com/"
+                      className="text-blue-700"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      http://awesomebarbecue.com/
+                    </a>
+                  </li>
+                </ul>
+              }
             />
             <InfoContainer
               title="2016.06"
               description={
-                "「Awesome Camp & Glamping」at BASE ウェブショップ開設、販売・レンタル・コーディネート事業開始"
+                <ul>
+                  <li>「Awesome Camp & Glamping」at BASE ウェブストア開設</li>
+                  <li>
+                    <a
+                      href="https://abbq.official.ec/"
+                      className="text-blue-700"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      https://abbq.official.ec/
+                    </a>
+                  </li>
+                  <li>販売・レンタル・コーディネート事業開始</li>
+                </ul>
               }
             />
           </div>
         </div>
       </section>
+      <Balloon />
     </div>
   );
 }

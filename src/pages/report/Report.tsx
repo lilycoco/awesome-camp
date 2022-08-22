@@ -1,4 +1,5 @@
 import React from "react";
+import Balloon from "../../components/Balloon";
 import ReportCard from "../../components/ReportCard";
 import Title from "../../components/Title";
 import { reportList } from "../../lib/report";
@@ -12,6 +13,7 @@ export default function Report() {
           <ReportCard key={index} report={report} />
         ))}
       </section>
+      <Balloon />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 export const pageList = [
   { enTitle: "Home", jaTitle: "ホーム", url: "/" },
-  { enTitle: "User Guide", jaTitle: "ご利用方法", url: "/guide" },
-  { enTitle: "Schedule", jaTitle: "スケジュール", url: "/schedule" },
+  { enTitle: "User Guide", jaTitle: "ご利用ガイド", url: "/guide" },
+  { enTitle: "Schedule", jaTitle: "ご利用の流れ", url: "/schedule" },
   {
     enTitle: "Wedding Report",
     jaTitle: "ウェディングレポート",

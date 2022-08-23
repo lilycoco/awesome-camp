@@ -108,37 +108,38 @@ export default function Home() {
               className="mb-20"
             />
             <div className="max-w-3xl m-auto bg-white p-10 shadow-md">
-              <img src={frame} alt="youtube" className="" />
+              <img src={frame} alt="" className="" />
               <div className="mb-10 my-16 mx-10">
-                <div className="mb-10">
-                  <p className="font-bold text-xl mb-4">
-                    <span className="mr-4">Step 1.</span>お問い合わせ
-                  </p>
-                  <p>まずは、お問合せフォームよりお気軽にご連絡下さい。</p>
-                </div>
-                <div className="mb-10">
-                  <p className="font-bold text-xl mb-4">
-                    <span className="mr-4">Step 2.</span>お打ち合わせ
-                  </p>
-                  <p>
-                    コンセプトやご予算、開催場所など、ご要望をお伺いさせていただきます。
-                    必要に応じて開催場所や、お食事、楽しいフォトバスやポートレートマシーンといったゲストと一緒に楽しめるコンテンツなどのご紹介もさせていただいております。（紹介料は頂戴しておりません。）
-                    『必要なものだけを手配します』をコンセプトとしておりますので、ご自身で準備されるアイテムの持ち込みも歓迎です。
-                  </p>
-                </div>
-                <div className="mb-10">
-                  <p className="font-bold text-xl mb-4">
-                    <span className="mr-4">Step 3.</span>パーティ当日
-                  </p>
-                  <p>
-                    本番は、スタッフによる設営（前日or当日の早朝）とサポートで、オリジナリティ溢れるウェディングパーティーを一緒に作り上げます。
-                  </p>
-                </div>
+                {[
+                  {
+                    title: "お問い合わせ",
+                    description:
+                      "まずは、お問合せフォームよりお気軽にご連絡下さい。",
+                  },
+                  {
+                    title: "お打ち合わせ",
+                    description:
+                      "コンセプトやご予算、開催場所など、ご要望をお伺いさせていただきます。必要に応じて開催場所や、お食事、楽しいフォトバスやポートレートマシーンといったゲストと一緒に楽しめるコンテンツなどのご紹介もさせていただいております。（紹介料は頂戴しておりません。）『必要なものだけを手配します』をコンセプトとしておりますので、ご自身で準備されるアイテムの持ち込みも歓迎です。",
+                  },
+                  {
+                    title: "パーティ当日",
+                    description:
+                      "本番は、スタッフによる設営（前日or当日の早朝）とサポートで、オリジナリティ溢れるウェディングパーティーを一緒に作り上げます。",
+                  },
+                ].map(({ title, description }, index) => (
+                  <div className="mb-10" key={index}>
+                    <p className="font-bold text-xl mb-4">
+                      <span className="mr-4">{`Step ${index + 1}.`}</span>
+                      {title}
+                    </p>
+                    <p>{description}</p>
+                  </div>
+                ))}
               </div>
               <Link to="/schedule">
                 <Button label="More" className="mb-10" />
               </Link>
-              <img src={frame} alt="youtube" className="" />
+              <img src={frame} alt="" className="" />
             </div>
           </div>
         </section>

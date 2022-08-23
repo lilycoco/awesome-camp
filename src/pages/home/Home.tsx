@@ -75,7 +75,7 @@ export default function Home() {
         <section className="py-24 max-w-screen-lg m-auto">
           <Title enLabel="Wedding Report" className="mb-20" />
           <div className="flex gap-5 overflow-scroll mb-10">
-            {reportList.map((report, index) => (
+            {[...reportList].reverse().map((report, index) => (
               <ReportCard key={index} report={report} />
             ))}
           </div>

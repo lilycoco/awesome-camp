@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ReccomendContent({
+export default function RecommendContent({
   title,
   description,
   className,
@@ -21,7 +21,7 @@ export default function ReccomendContent({
         <h2 className="mb-5 text-2xl font-bold">{title}</h2>
         <p>{description}</p>
       </div>
-      <img src={src} alt="reccomend" className="max-w-lg h-80 object-cover" />
+      <img src={src} alt="recommend" className="max-w-lg h-80 object-cover" />
     </div>
   );
 }

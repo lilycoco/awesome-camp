@@ -1,9 +1,9 @@
 import React from "react";
 import { pageList } from "../lib/page";
-import youtube from "../assets/logo/youtube.png";
-import instagram from "../assets/logo/instagram.png";
-import awesome from "../assets/logo/awesome.png";
-import facebook from "../assets/logo/facebook.png";
+import youtube from "../assets/icon/youtube.png";
+import instagram from "../assets/icon/instagram.png";
+import awesome from "../assets/icon/awesome.png";
+import facebook from "../assets/icon/facebook.png";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -43,7 +43,7 @@ export default function Footer() {
           ))}
         </div>
         <Link to="/">
-          <img src={awesome} alt="logo" className="mb-3 w-32 m-auto" />
+          <img src={awesome} alt="icon" className="mb-3 w-32 m-auto" />
         </Link>
       </div>
       <p className="text-center text-sm pb-5">©︎2022 Awesome Camp & Glamping</p>

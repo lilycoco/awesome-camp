@@ -1,16 +1,16 @@
 import React from "react";
 import { pageList } from "../lib/page";
-import awesome from "../assets/logo/awesome.png";
-import youtube from "../assets/logo/youtube.png";
-import facebook from "../assets/logo/facebook.png";
-import instagram from "../assets/logo/instagram.png";
+import awesome from "../assets/icon/awesome.png";
+import youtube from "../assets/icon/youtube.png";
+import facebook from "../assets/icon/facebook.png";
+import instagram from "../assets/icon/instagram.png";
 import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="p-5 sticky bg-white font-['Helvetica'] z-20 shadow-sm -top-16 opacity-90">
+    <header className="p-3 sticky bg-white font-['Helvetica'] z-20 shadow-sm -top-12 opacity-90">
       <Link to="/">
-        <img src={awesome} alt="logo" className="w-20 mb-3 m-auto" />
+        <img src={awesome} alt="icon" className="w-16 mb-1 m-auto" />
       </Link>
       <nav className="flex justify-center gap-10 whitespace-nowrap items-center sticky top-0">
         {pageList.map(({ enTitle, jaTitle, url }, index) => (

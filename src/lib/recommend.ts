@@ -2,7 +2,7 @@ import back from "../assets/images/back.jpg";
 import night from "../assets/images/night.jpg";
 import flower from "../assets/images/flower.jpg";
 
-export const reccomendList = [
+export const recommendList = [
   {
     title: "お好きな場所で",
     description:

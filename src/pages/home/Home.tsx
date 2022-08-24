@@ -6,11 +6,11 @@ import frame from "../../assets/parts/frame.png";
 import Title from "../../components/Title";
 import ReportCard from "../../components/ReportCard";
 import Button from "../../components/Button";
-import ReccomendContent from "./partials/ReccomendContent";
+import RecommendContent from "./partials/RecommendContent";
 // import ScrollReveal from "scrollreveal";
 import { reportList } from "../../lib/report";
 import { coverageList } from "../../lib/coverage";
-import { reccomendList } from "../../lib/reccomend";
+import { recommendList } from "../../lib/recommend";
 import PlanContent from "./partials/PlanContent";
 import { Link } from "react-router-dom";
 import Balloon from "../../components/Balloon";
@@ -61,8 +61,8 @@ export default function Home() {
         </section>
         <section className="bg-light-brown-gray">
           <div className="py-24 max-w-screen-lg m-auto flex flex-col gap-36 items-center w-full">
-            {reccomendList.map(({ title, description, src }, index) => (
-              <ReccomendContent
+            {recommendList.map(({ title, description, src }, index) => (
+              <RecommendContent
                 className={index % 2 ? "flex-row-reverse" : ""}
                 key={index}
                 title={title}
@@ -93,7 +93,7 @@ export default function Home() {
               url="/guide"
             />
             <PlanContent
-              title="Our Servise"
+              title="Our Service"
               description="私たちが出来ること"
               src={plan_2}
               url="/guide"

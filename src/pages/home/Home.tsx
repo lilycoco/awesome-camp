@@ -1,10 +1,9 @@
 import React from "react";
 import back from "../../assets/images/back.jpg";
-import summer from "../../assets/images/summer.jpg";
-
-import tree from "../../assets/images/tree.jpg";
-import plan_1 from "../../assets/images/plan_1.jpeg";
-import fes from "../../assets/images/fes.jpg";
+import hands from "../../assets/images/hands.jpg";
+import cake from "../../assets/images/cake.jpeg";
+import service_3 from "../../assets/images/service_3.jpeg";
+import fes from "../../assets/images/fes2.jpeg";
 import plan_2 from "../../assets/images/plan_2.jpeg";
 import frame from "../../assets/parts/frame.png";
 import Title from "../../components/Title";
@@ -65,7 +64,7 @@ export default function Home() {
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src={tree}
+              src={cake}
               alt="top"
               className="w-full h-screen object-cover"
             />
@@ -76,7 +75,7 @@ export default function Home() {
         <section className="py-24 max-w-screen-lg m-auto">
           <Title
             enLabel="Have an Awesome Outdoor Wedding!"
-            className="my-10 m-auto text-5xl"
+            className="mb-20 m-auto text-5xl"
           />
           <p className="text-center leading-[3rem]">
             おふたりの好きな場所で
@@ -138,13 +137,13 @@ export default function Home() {
             <PlanContent
               title="Plans"
               description="プランのご紹介"
-              src={plan_1}
+              src={plan_2}
               url="/guide"
             />
             <PlanContent
               title="Our Service"
               description="私たちが出来ること"
-              src={plan_2}
+              src={hands}
               url="/guide"
             />
           </div>

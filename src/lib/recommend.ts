@@ -1,4 +1,4 @@
-import back from "../assets/images/back.jpg";
+import sky from "../assets/images/sky.jpg";
 import night from "../assets/images/night.jpg";
 import flower from "../assets/images/flower.jpg";
 
@@ -7,7 +7,7 @@ export const recommendList = [
     title: "お好きな場所で",
     description:
       "東京を拠点として全国出張対応しています。アクセスの良い場所やおふたりの思い出の場所など、ご希望の場所をご相談ください。開催場所の心当たりが無い場合もアウトドアウェディングにぴったりなキャンプ場やガーデン付きのレンタルスペースなど、幅広くご提案させていただきます。",
-    src: back,
+    src: sky,
   },
   {
     title: "アウトドアのスペシャリストだからできること",

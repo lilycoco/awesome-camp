@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import Anchor from "../../components/Anchor";
 import Balloon from "../../components/Balloon";
 import Title from "../../components/Title";
 
@@ -50,14 +51,9 @@ export default function About() {
                 <ul>
                   <li>「Awesome Barbecue.com」 ウェブメディア開設</li>
                   <li>
-                    <a
-                      href="http://awesomebarbecue.com/"
-                      className="text-blue-700"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <Anchor url="http://awesomebarbecue.com/">
                       http://awesomebarbecue.com/
-                    </a>
+                    </Anchor>
                   </li>
                 </ul>
               }

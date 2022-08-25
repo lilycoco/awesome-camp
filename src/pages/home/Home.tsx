@@ -1,6 +1,10 @@
 import React from "react";
-import family from "../../assets/images/family.jpeg";
+import back from "../../assets/images/back.jpg";
+import summer from "../../assets/images/summer.jpg";
+
+import tree from "../../assets/images/tree.jpg";
 import plan_1 from "../../assets/images/plan_1.jpeg";
+import fes from "../../assets/images/fes.jpg";
 import plan_2 from "../../assets/images/plan_2.jpeg";
 import frame from "../../assets/parts/frame.png";
 import Title from "../../components/Title";
@@ -14,6 +18,12 @@ import { recommendList } from "../../lib/recommend";
 import PlanContent from "./partials/PlanContent";
 import { Link } from "react-router-dom";
 import Balloon from "../../components/Balloon";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFade, Navigation, Pagination, Autoplay } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
 export default function Home() {
   // React.useEffect(() => {
@@ -22,7 +32,46 @@ export default function Home() {
 
   return (
     <div>
-      <img src={family} alt="top" className="w-full h-screen object-cover" />
+      <>
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 6000,
+            disableOnInteraction: false,
+          }}
+          effect={"fade"}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[EffectFade, Autoplay, Pagination, Navigation]}
+        >
+          <SwiperSlide>
+            <img
+              src={back}
+              alt="top"
+              className="w-full h-screen object-cover"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={fes} alt="top" className="w-full h-screen object-cover" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src={plan_2}
+              alt="top"
+              className="w-full h-screen object-cover"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src={tree}
+              alt="top"
+              className="w-full h-screen object-cover"
+            />
+          </SwiperSlide>
+        </Swiper>
+      </>
       <div className="m-auto">
         <section className="py-24 max-w-screen-lg m-auto">
           <Title

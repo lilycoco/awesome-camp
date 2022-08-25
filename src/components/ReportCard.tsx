@@ -19,7 +19,7 @@ export default function ReportCard({
           {youtube ? (
             <iframe
               className="absolute top-0 left-0 w-full h-full"
-              src={`https://www.youtube.com/embed/${youtube}`}
+              src={`https://www.youtube.com/embed/${youtube}?controls=0`}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen={true}
@@ -38,7 +38,7 @@ export default function ReportCard({
           <p>{location}</p>
           {report && (
             <a
-              className="font-bold border border-black px-2 font-['Helvetica']"
+              className="font-bold border border-black px-2 font-['Helvetica'] shadow"
               href={report}
             >
               REPORT

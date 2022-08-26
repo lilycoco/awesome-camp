@@ -64,14 +64,9 @@ export default function About() {
                 <ul>
                   <li>「Awesome Camp & Glamping」at BASE ウェブストア開設</li>
                   <li>
-                    <a
-                      href="https://abbq.official.ec/"
-                      className="text-blue-700"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <Anchor url="https://abbq.official.ec/">
                       https://abbq.official.ec/
-                    </a>
+                    </Anchor>
                   </li>
                   <li>販売・レンタル・コーディネート事業開始</li>
                 </ul>

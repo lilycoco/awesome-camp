@@ -5,7 +5,7 @@ export default function Anchor({
   children,
   className,
 }: {
-  url?: string;
+  url: string;
   children?: string | React.ReactElement;
   className?: string;
 }) {

@@ -60,12 +60,14 @@ export const serviceList = [
             <Anchor url="https://www.instagram.com/puertokitchencar/">
               PUERTO / プエルト
             </Anchor>
+            <br />
             （キッチンカー・ケータリング・出張シェフ・ロケ弁）
           </li>
           <li>
             <Anchor url="https://www.veggietempo.com/">
               Veggie Tempo / ベジテンポ
             </Anchor>
+            <br />
             （ケータリング・出張シェフ・ロケ弁・出張バーテンダー）
           </li>
         </ul>
@@ -84,30 +86,35 @@ export const serviceList = [
             <Anchor url="https://www.fuwariwedding.com/">
               FUWARI WEDDING / フワリ・ウェディング
             </Anchor>
+            <br />
             （ポートレートマシーン・フォトブース・装花全般・ペーパーアイテム）
           </li>
           <li>
             <Anchor url="https://www.instagram.com/photobusjapan/?hl=en">
               PhotoBus JAPAN / フォト・バス・ジャパン
             </Anchor>
+            <br />
             （フォトブース・ワーゲンバス劇用車）
           </li>
           <li>
             <Anchor url="https://roomingsystems.com/">
               ROOMING SYSTEMS / ルーミング・システムズ
             </Anchor>
+            <br />
             （モーターホーム・モーターホーム劇用車）
           </li>
           <li>
             <Anchor url="https://t-village.co.jp/">
               Trailer Village / トレイラー・ビレッジ
             </Anchor>
+            <br />
             （キャンピングトレーラー・劇用車）
           </li>
           <li>
             <Anchor url="https://regressiveevolution.com/">
               REGRESS / リグレス
             </Anchor>
+            <br />
             （ルーフトップテント付き劇用車）
           </li>
         </ul>
@@ -141,8 +148,17 @@ export const serviceList = [
         野外撮影に長けたカメラマンによるフォト・ムービー・ドローン撮影
         <div>【フォトグラファー・ビデオグラファーご紹介例】</div>
         <ul className="list-disc ml-6">
-          <li>LODE Film / ロデ・フィルム （ムービー・スチール・ドローン）</li>
-          <li>Caddis Films （ムービー・スチール・ドローン）</li>
+          <li>
+            <Anchor url="https://www.lodefilm.com/">
+              LODE Film / ロデ・フィルム
+            </Anchor>
+            <br />
+            （ムービー・スチール・ドローン）
+          </li>
+          <li>
+            Caddis Films <br />
+            （ムービー・スチール・ドローン）
+          </li>
         </ul>
       </div>
     ),

@@ -23,6 +23,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
+import Anchor from "../../components/Anchor";
 
 export default function Home() {
   // React.useEffect(() => {
@@ -201,16 +202,7 @@ export default function Home() {
                   <span className="font-bold mr-10">{date}</span>
                   <div>
                     <div>{description}</div>
-                    {url && (
-                      <a
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-700"
-                      >
-                        {url}
-                      </a>
-                    )}
+                    {url && <Anchor url={url}>{url}</Anchor>}
                   </div>
                 </div>
               ))}

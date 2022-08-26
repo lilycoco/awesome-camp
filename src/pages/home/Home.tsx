@@ -48,17 +48,14 @@ export default function Home() {
         >
           <SwiperSlide>
             <img
-              src={back}
+              src={plan_2}
               alt="top"
               className="w-full h-screen object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={fes} alt="top" className="w-full h-screen object-cover" />
-          </SwiperSlide>
-          <SwiperSlide>
             <img
-              src={plan_2}
+              src={back}
               alt="top"
               className="w-full h-screen object-cover"
             />
@@ -69,6 +66,9 @@ export default function Home() {
               alt="top"
               className="w-full h-screen object-cover"
             />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={fes} alt="top" className="w-full h-screen object-cover" />
           </SwiperSlide>
         </Swiper>
       </>

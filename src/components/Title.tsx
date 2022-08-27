@@ -10,6 +10,8 @@ export default function Title({
   className?: string;
 }) {
   return (
-    <h1 className={"w-fit mb-10 font-oleo text-6xl " + className}>{enLabel}</h1>
+    <h1 className={"w-fit mb-14 md:mb-20 font-oleo text-6xl " + className}>
+      {enLabel}
+    </h1>
   );
 }

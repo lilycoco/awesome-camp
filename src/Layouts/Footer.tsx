@@ -5,36 +5,37 @@ import instagram from "../assets/icon/instagram.png";
 import awesome from "../assets/icon/awesome.png";
 import facebook from "../assets/icon/facebook.png";
 import { Link } from "react-router-dom";
+import Icon from "../components/Icon";
 
 export default function Footer() {
+  const SnsLinks = ({ className }: { className?: string }) => (
+    <div className={"flex items-center gap-5 " + className}>
+      <p className="whitespace-nowrap">Find Us On:</p>
+      <div className="flex items-center gap-4">
+        <Icon
+          href="https://www.youtube.com/channel/UCPglpd7wKzyBYzc4GKcfr3g?view_as=subscriber"
+          src={youtube}
+          alt="youtube"
+        />
+        <Icon
+          href="https://www.instagram.com/awesome_camp_inc/"
+          src={instagram}
+          alt="instagram"
+        />
+        <Icon
+          href="https://www.facebook.com/awesomebarbecue.glamping/"
+          src={facebook}
+          alt="facebook"
+        />
+      </div>
+    </div>
+  );
+
   return (
     <footer className="font-['Helvetica'] bg-[#F7F7F7]">
-      <div className="pt-10 pb-16 max-w-4xl m-auto flex items-start gap-32">
-        <div className="flex items-center gap-5">
-          <p className="whitespace-nowrap">Find Us On:</p>
-          <a
-            href="https://www.youtube.com/channel/UCPglpd7wKzyBYzc4GKcfr3g?view_as=subscriber"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={youtube} alt="youtube" className="h-4" />
-          </a>
-          <a
-            href="https://www.instagram.com/awesome_camp_inc/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={instagram} alt="instagram" className="h-4" />
-          </a>
-          <a
-            href="https://www.facebook.com/awesomebarbecue.glamping/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={facebook} alt="facebook" className="h-4" />
-          </a>
-        </div>
-        <div className="flex flex-col flex-wrap h-48 w-72 justify-between">
+      <div className="pt-10 px-10 pb-16 max-w-4xl m-auto md:flex items-start gap-32">
+        <SnsLinks className="hidden md:block" />
+        <div className="flex flex-col flex-wrap h-48 w-72 justify-between mb-12 md:mb-0">
           {pageList.map(({ enTitle, jaTitle, url }, index) => (
             <Link key={index} className="flex flex-col w-32" to={url}>
               <span className="font-bold">{enTitle}</span>
@@ -42,6 +43,7 @@ export default function Footer() {
             </Link>
           ))}
         </div>
+        <SnsLinks className="block md:hidden mb-12" />
         <Link to="/">
           <img src={awesome} alt="icon" className="mb-3 w-32 m-auto" />
         </Link>

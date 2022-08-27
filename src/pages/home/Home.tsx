@@ -78,8 +78,8 @@ export default function Home() {
       </>
       <Section>
         <Title
-          enLabel="Have an Awesome Wedding!"
-          className="mb-20 m-auto text-5xl text-center"
+          enLabel="Have an Awesome Outdoor Wedding!"
+          className="m-auto text-[2.8rem] md:text-5xl text-center leading-normal"
         />
         <p className="text-center leading-[3rem]">
           おふたりの好きな場所で
@@ -97,7 +97,7 @@ export default function Home() {
         </p>
       </Section>
       <Section wrapperClass="bg-light-brown-gray pb-20">
-        <Title enLabel="Concept" />
+        <Title enLabel="Concept" className="mb-0" />
         <div className="relative">
           <div className="outlines font-['Optima'] font-extrabold absolute text-5xl md:text-9xl top-11 md:top-0">
             AWESOME
@@ -132,7 +132,7 @@ export default function Home() {
         ))}
       </Section>
       <Section>
-        <Title enLabel="Wedding Report" className="mb-20" />
+        <Title enLabel="Wedding Report" />
         <div className="flex gap-5 overflow-scroll mb-10">
           {[...reportList].reverse().map((report, index) => (
             <ReportCard key={index} report={report} />
@@ -144,7 +144,7 @@ export default function Home() {
       </Section>
       <section className="py-24 m-auto px-5 mb-20">
         <div className="m-auto max-w-screen-lg">
-          <Title enLabel="Plan & Our Service" className="mb-20" />
+          <Title enLabel="Plan & Our Service" />
         </div>
         <div className="flex gap-5 max-w-screen-2xl m-auto flex-col md:flex-row">
           <PlanContent
@@ -162,10 +162,10 @@ export default function Home() {
         </div>
       </section>
       <Section wrapperClass="gradient-gray">
-        <Title enLabel="Schedule" jaLabel="スケジュール" className="mb-20" />
+        <Title enLabel="Schedule" jaLabel="スケジュール" />
         <div className="max-w-3xl m-auto bg-white p-10 shadow-md">
           <img src={frame} alt="" className="" />
-          <div className="mb-10 my-16 mx-10">
+          <div className="mb-10 my-16 md:mx-10">
             {[
               {
                 title: "お問い合わせ",
@@ -184,7 +184,7 @@ export default function Home() {
               },
             ].map(({ title, description }, index) => (
               <div className="mb-10" key={index}>
-                <p className="font-bold text-xl mb-4">
+                <p className="font-bold text-2xl mb-4">
                   <span className="mr-4">{`Step ${index + 1}.`}</span>
                   {title}
                 </p>
@@ -199,7 +199,7 @@ export default function Home() {
         </div>
       </Section>
       <Section sectionClass="pb-32">
-        <Title enLabel="Media Coverage" jaLabel="メディア掲載情報" />
+        <Title enLabel="Media Coverage" />
         <div className="border-2 border-black px-10 py-5 rounded-md divide-y-2 > *">
           {[...coverageList]
             .reverse()

@@ -19,7 +19,7 @@ export default function PlanContent({
       <div className="gradation relative">
         <img src={src} alt="top" className="w-auto filter brightness-110" />
       </div>
-      <div className="absolute top-10 left-10 text-white font-['Noto_Sans']">
+      <div className="absolute top-5 md:top-10 left-5 md:left-10 text-white font-['Noto_Sans']">
         <p className="text-5xl font-extrabold mb-3">{title}</p>
         <p className="mb-4">{description}</p>
       </div>

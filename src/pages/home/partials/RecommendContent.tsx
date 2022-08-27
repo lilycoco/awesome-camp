@@ -14,7 +14,7 @@ export default function RecommendContent({
   return (
     <div
       className={
-        "flex justify-between gap-10 scroll-reveal m-auto flex-col md:flex-row " +
+        "flex justify-between gap-10 scroll-reveal m-auto flex-col md:flex-row w-full " +
         className
       }
     >
@@ -22,7 +22,11 @@ export default function RecommendContent({
         <h2 className="mb-5 text-2xl font-bold">{title}</h2>
         <p>{description}</p>
       </div>
-      <img src={src} alt="recommend" className="max-w-lg h-80 object-cover" />
+      <img
+        src={src}
+        alt="recommend"
+        className="md:max-w-lg max-h-80 object-cover"
+      />
     </div>
   );
 }

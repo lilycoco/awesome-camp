@@ -200,12 +200,12 @@ export default function Home() {
       </Section>
       <Section sectionClass="pb-32">
         <Title enLabel="Media Coverage" />
-        <div className="> * divide-y-2 rounded-md border-2 border-black px-10 py-5">
+        <div className="> * divide-y-2 rounded-md border-2 border-black py-1 px-5 md:py-5 md:px-10">
           {[...coverageList]
             .reverse()
             .map(({ date, description, url }, index) => (
-              <div className="flex py-4" key={index}>
-                <span className="mr-10 font-bold">{date}</span>
+              <div className="flex gap-5 py-4 md:gap-10" key={index}>
+                <span className="font-bold">{date}</span>
                 <div>
                   <div>{description}</div>
                   {url && (

@@ -100,23 +100,20 @@ export default function Guide() {
         </div>
       </Section>
       <Section wrapperClass="bg-light-brown-gray">
-        <div className="m-auto max-w-screen-lg py-24">
-          <SubTitle
-            en="Our Service"
-            ja="Awesome Camp & Glamping ができるコト"
-          />
-          <div className="mb-20">
-            {serviceList.map(({ title }, index) => (
-              <button
-                key={index}
-                className="mb-2 flex w-full max-w-2xl bg-white p-2 px-4 text-left text-xl shadow-md"
-                onClick={() => onClick(index)}
-              >
-                <span className="mr-6 text-lg">{`0${index + 1}.`}</span>
-                {title}
-              </button>
-            ))}
-          </div>
+        <SubTitle en="Our Service" ja="Awesome Camp & Glamping ができるコト" />
+        <div className="mb-20">
+          {serviceList.map(({ title }, index) => (
+            <button
+              key={index}
+              className="mb-2 flex w-full max-w-2xl bg-white p-2 px-4 text-left text-xl shadow-md"
+              onClick={() => onClick(index)}
+            >
+              <span className="mr-6 text-lg">{`0${index + 1}.`}</span>
+              {title}
+            </button>
+          ))}
+        </div>
+        <>
           {serviceList.map(({ title, description, img }, index) => (
             <div
               key={index}
@@ -140,7 +137,7 @@ export default function Guide() {
               />
             </div>
           ))}
-        </div>
+        </>
       </Section>
       <Balloon />
     </div>

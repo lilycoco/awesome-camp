@@ -50,28 +50,28 @@ export default function Home() {
             <img
               src={plan_2}
               alt="top"
-              className="w-full h-screen object-cover"
+              className="h-screen w-full object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={back}
               alt="top"
-              className="w-full h-screen object-cover"
+              className="h-screen w-full object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={cake}
               alt="top"
-              className="w-full h-screen object-cover"
+              className="h-screen w-full object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={fes2}
               alt="top"
-              className="w-full h-screen object-cover"
+              className="h-screen w-full object-cover"
             />
           </SwiperSlide>
         </Swiper>
@@ -79,7 +79,7 @@ export default function Home() {
       <Section>
         <Title
           enLabel="Have an Awesome Outdoor Wedding!"
-          className="m-auto text-[2.8rem] md:text-5xl text-center leading-normal"
+          className="m-auto text-center text-[2.8rem] md:text-5xl"
         />
         <p className="text-center leading-[3rem]">
           おふたりの好きな場所で
@@ -99,11 +99,11 @@ export default function Home() {
       <Section wrapperClass="bg-light-brown-gray pb-20">
         <Title enLabel="Concept" className="mb-0" />
         <div className="relative">
-          <div className="outlines font-['Optima'] font-extrabold absolute text-5xl md:text-9xl top-11 md:top-0">
+          <div className="outlines absolute top-11 font-['Optima'] text-5xl font-extrabold md:top-0 md:text-9xl">
             AWESOME
           </div>
-          <div className="m-auto mb-10 scroll-reveal bg-white p-10 relative z-10 top-20 opacity-90 md:w-160 ">
-            <h2 className="text-xl mb-5 font-bold">
+          <div className="scroll-reveal relative top-20 z-10 m-auto mb-10 bg-white p-10 opacity-90 md:w-160 ">
+            <h2 className="mb-5 text-xl font-bold">
               Awesome Camp & Glamping は
             </h2>
             <p className="">
@@ -112,7 +112,7 @@ export default function Home() {
               そんな私たちが培ってきたノウハウを活かして、フォトウェディングから、少人数でのプチパーティー、野外フェスのテイストを盛り込んだオリジナリティ溢れるアウトドアウェディングまで、ご希望のアウトドア空間作りをプロデュースします。
             </p>
           </div>
-          <div className="outlines font-['Optima'] font-extrabold absolute right-0 -bottom-28 md:-bottom-40 text-5xl md:text-9xl">
+          <div className="outlines absolute right-0 -bottom-28 font-['Optima'] text-5xl font-extrabold md:-bottom-40 md:text-9xl">
             WEDDING
           </div>
         </div>
@@ -133,7 +133,7 @@ export default function Home() {
       </Section>
       <Section>
         <Title enLabel="Wedding Report" />
-        <div className="flex gap-5 overflow-scroll mb-10">
+        <div className="mb-10 flex gap-5 overflow-scroll">
           {[...reportList].reverse().map((report, index) => (
             <ReportCard key={index} report={report} />
           ))}
@@ -142,11 +142,11 @@ export default function Home() {
           <Button label="More" />
         </Link>
       </Section>
-      <section className="py-24 m-auto px-5 mb-20">
+      <section className="m-auto mb-20 py-24 px-5">
         <div className="m-auto max-w-screen-lg">
           <Title enLabel="Plan & Our Service" />
         </div>
-        <div className="flex gap-5 max-w-screen-2xl m-auto flex-col md:flex-row">
+        <div className="m-auto flex max-w-screen-2xl flex-col gap-5 md:flex-row">
           <PlanContent
             title="Plans"
             description="プランのご紹介"
@@ -163,9 +163,9 @@ export default function Home() {
       </section>
       <Section wrapperClass="gradient-gray">
         <Title enLabel="Schedule" jaLabel="スケジュール" />
-        <div className="max-w-3xl m-auto bg-white p-10 shadow-md">
+        <div className="m-auto max-w-3xl bg-white p-10 shadow-md">
           <img src={frame} alt="" className="" />
-          <div className="mb-10 my-16 md:mx-10">
+          <div className="my-16 mb-10 md:mx-10">
             {[
               {
                 title: "お問い合わせ",
@@ -184,7 +184,7 @@ export default function Home() {
               },
             ].map(({ title, description }, index) => (
               <div className="mb-10" key={index}>
-                <p className="font-bold text-2xl mb-4">
+                <p className="mb-4 text-2xl font-bold">
                   <span className="mr-4">{`Step ${index + 1}.`}</span>
                   {title}
                 </p>
@@ -200,12 +200,12 @@ export default function Home() {
       </Section>
       <Section sectionClass="pb-32">
         <Title enLabel="Media Coverage" />
-        <div className="border-2 border-black px-10 py-5 rounded-md divide-y-2 > *">
+        <div className="> * divide-y-2 rounded-md border-2 border-black px-10 py-5">
           {[...coverageList]
             .reverse()
             .map(({ date, description, url }, index) => (
               <div className="flex py-4" key={index}>
-                <span className="font-bold mr-10">{date}</span>
+                <span className="mr-10 font-bold">{date}</span>
                 <div>
                   <div>{description}</div>
                   {url && (

@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import Anchor from "../../components/Anchor";
 import Balloon from "../../components/Balloon";
 import Title from "../../components/Title";
+import Section from "../../Layouts/Section";
 
 export default function About() {
   const InfoContainer = ({
@@ -11,18 +12,18 @@ export default function About() {
     title: string;
     description: string | ReactNode;
   }) => (
-    <div className="flex py-6 border-b border-gray-400 items-start">
-      <div className="w-40 font-bold text-sm pt-2">{title}</div>
+    <div className="flex items-start border-b border-gray-400 py-6">
+      <div className="w-40 pt-2 text-sm font-bold">{title}</div>
       <div>{description}</div>
     </div>
   );
 
   return (
-    <div className="bg-light-brown-gray">
-      <Title enLabel="About Us" className="m-auto pt-24 pb-16" />
-      <section className="pb-24 max-w-screen-lg m-auto">
+    <Section wrapperClass="bg-light-brown-gray">
+      <Title enLabel="About Us" className="m-auto pb-16" />
+      <section className="m-auto max-w-screen-lg pb-24">
         <div className="mb-36">
-          <div className="font-['Noto_Sans'] text-3xl mb-14">Company</div>
+          <div className="mb-14 font-['Noto_Sans'] text-3xl">Company</div>
           <div className="max-w-2xl border-t border-gray-400">
             <InfoContainer
               title="Company Name"
@@ -43,7 +44,7 @@ export default function About() {
           </div>
         </div>
         <div className="mb-20">
-          <div className="font-['Noto_Sans'] text-3xl mb-14">History</div>
+          <div className="mb-14 font-['Noto_Sans'] text-3xl">History</div>
           <div className="max-w-2xl border-t border-gray-400">
             <InfoContainer
               title="2014.04"
@@ -76,6 +77,6 @@ export default function About() {
         </div>
       </section>
       <Balloon />
-    </div>
+    </Section>
   );
 }

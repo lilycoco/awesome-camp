@@ -12,7 +12,7 @@ export default function Button({
   return (
     <button
       className={
-        "bg-white text-black min-w-[200px] h-8 items-center justify-center flex m-auto border-2 border-black font-bold text-sm " +
+        "bg-white text-black min-w-[220px] h-10 items-center justify-center flex m-auto border-2 border-black " +
         className
       }
       onClick={() => {}}

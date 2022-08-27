@@ -50,6 +50,16 @@ code {
   height: 100%;
   object-fit: cover;
 }
+.outlines {
+  font-size: 128px;
+  color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke: 1px #c09747;
+}
+
+.gradient-gray {
+  background: linear-gradient(to bottom, #f1eeea, #fff);
+  /*グラデーション以外は省略*/
+}
 
 @layer components {
   .balloon:before {

@@ -24,6 +24,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import Anchor from "../../components/Anchor";
+import Section from "../../Layouts/Section";
 
 export default function Home() {
   // React.useEffect(() => {
@@ -88,7 +89,7 @@ export default function Home() {
           <br />
           大切な人たちと
           <br />
-          最高な時間を過ごして欲しい。
+          "Awesome 最高" な時間を過ごして欲しい。
           <br /> そんな思いを持って
           <br /> オーダーメイドでおふたりらしい空間作りの
           <br />
@@ -96,35 +97,38 @@ export default function Home() {
           <br />
         </p>
       </section>
-      <section className="bg-light-brown-gray">
-        <div className="py-24 max-w-screen-lg m-auto">
-          <Title enLabel="Concept" />
-          <div className="m-auto mb-10 scroll-reveal bg-white p-10 w-160">
-            <h2 className="text-xl mb-5 font-bold">
-              Awesome Camp & Glamping は
-            </h2>
-            <p className="">
-              イベント・撮影等のプランニングからキャンプ、グランピングのレンタル事業、当日の設営、運営、美術監督まで行うアウトドアのスペシャリストです。
-              これまでアウトドアウェディングはもちろんのこと、CM・PV、テレビ番組、広告撮影や大型商業施設のイベント等、数多くのアウトドアシーンをプロデュースしてきました。
-              そんな私たちが培ってきたノウハウを活かして、フォトウェディングから、少人数でのプチパーティー、野外フェスのテイストを盛り込んだオリジナリティ溢れるアウトドアウェディングまで、ご希望のアウトドア空間作りをプロデュースします。
-            </p>
-          </div>
+      <Section sectionClass="relative" wrapperClass="bg-light-brown-gray pb-20">
+        <Title enLabel="Concept" />
+        <div className="outlines font-['Optima'] text-9xl font-extrabold absolute">
+          AWESOME
         </div>
-      </section>
-      <section className="bg-light-brown-gray">
-        <div className="py-24 max-w-screen-lg m-auto flex flex-col gap-36 items-center w-full">
-          {recommendList.map(({ title, description, src }, index) => (
-            <RecommendContent
-              className={index % 2 ? "flex-row-reverse" : ""}
-              key={index}
-              title={title}
-              description={description}
-              src={src}
-            />
-          ))}
+        <div className="m-auto mb-10 scroll-reveal bg-white p-10 w-160 relative z-10 top-20 opacity-90">
+          <h2 className="text-xl mb-5 font-bold">Awesome Camp & Glamping は</h2>
+          <p className="">
+            イベント・撮影等のプランニングからキャンプ、グランピングのレンタル事業、当日の設営、運営、美術監督まで行うアウトドアのスペシャリストです。
+            これまでアウトドアウェディングはもちろんのこと、CM・PV、テレビ番組、広告撮影や大型商業施設のイベント等、数多くのアウトドアシーンをプロデュースしてきました。
+            そんな私たちが培ってきたノウハウを活かして、フォトウェディングから、少人数でのプチパーティー、野外フェスのテイストを盛り込んだオリジナリティ溢れるアウトドアウェディングまで、ご希望のアウトドア空間作りをプロデュースします。
+          </p>
         </div>
-      </section>
-      <section className="py-24 max-w-screen-lg m-auto">
+        <div className="outlines font-['Optima'] text-7xl font-extrabold absolute right-0 -bottom-6">
+          WEDDING
+        </div>
+      </Section>
+      <Section
+        wrapperClass="gradient-gray"
+        sectionClass="flex flex-col gap-36 items-center w-full"
+      >
+        {recommendList.map(({ title, description, src }, index) => (
+          <RecommendContent
+            className={index % 2 ? "flex-row-reverse" : ""}
+            key={index}
+            title={title}
+            description={description}
+            src={src}
+          />
+        ))}
+      </Section>
+      <Section>
         <Title enLabel="Wedding Report" className="mb-20" />
         <div className="flex gap-5 overflow-scroll mb-10">
           {[...reportList].reverse().map((report, index) => (
@@ -134,10 +138,12 @@ export default function Home() {
         <Link to="/report">
           <Button label="More" />
         </Link>
-      </section>
-      <section className="py-24 m-auto">
-        <Title enLabel="Plan & Our Service" className="ml-52" />
-        <div className="flex p-10 gap-5">
+      </Section>
+      <section className="py-24 m-auto px-5 mb-20">
+        <div className="m-auto max-w-screen-lg">
+          <Title enLabel="Plan & Our Service" className="mb-20" />
+        </div>
+        <div className="flex gap-5 max-w-screen-2xl m-auto">
           <PlanContent
             title="Plans"
             description="プランのご紹介"
@@ -152,46 +158,44 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="bg-light-brown-gray">
-        <div className="py-24 max-w-screen-lg m-auto">
-          <Title enLabel="Schedule" jaLabel="スケジュール" className="mb-20" />
-          <div className="max-w-3xl m-auto bg-white p-10 shadow-md">
-            <img src={frame} alt="" className="" />
-            <div className="mb-10 my-16 mx-10">
-              {[
-                {
-                  title: "お問い合わせ",
-                  description:
-                    "まずは、お問合せフォームよりお気軽にご連絡下さい。",
-                },
-                {
-                  title: "お打ち合わせ",
-                  description:
-                    "コンセプトやご予算、開催場所など、ご要望をお伺いさせていただきます。必要に応じて開催場所や、お食事、楽しいフォトバスやポートレートマシーンといったゲストと一緒に楽しめるコンテンツなどのご紹介もさせていただいております。（紹介料は頂戴しておりません。）『必要なものだけを手配します』をコンセプトとしておりますので、ご自身で準備されるアイテムの持ち込みも歓迎です。",
-                },
-                {
-                  title: "パーティ当日",
-                  description:
-                    "本番は、スタッフによる設営（前日or当日の早朝）とサポートで、オリジナリティ溢れるウェディングパーティーを一緒に作り上げます。",
-                },
-              ].map(({ title, description }, index) => (
-                <div className="mb-10" key={index}>
-                  <p className="font-bold text-xl mb-4">
-                    <span className="mr-4">{`Step ${index + 1}.`}</span>
-                    {title}
-                  </p>
-                  <p>{description}</p>
-                </div>
-              ))}
-            </div>
-            <Link to="/schedule">
-              <Button label="More" className="mb-10" />
-            </Link>
-            <img src={frame} alt="" className="" />
+      <Section wrapperClass="gradient-gray">
+        <Title enLabel="Schedule" jaLabel="スケジュール" className="mb-20" />
+        <div className="max-w-3xl m-auto bg-white p-10 shadow-md">
+          <img src={frame} alt="" className="" />
+          <div className="mb-10 my-16 mx-10">
+            {[
+              {
+                title: "お問い合わせ",
+                description:
+                  "まずは、お問合せフォームよりお気軽にご連絡下さい。",
+              },
+              {
+                title: "お打ち合わせ",
+                description:
+                  "コンセプトやご予算、開催場所など、ご要望をお伺いさせていただきます。必要に応じて開催場所や、お食事、楽しいフォトバスやポートレートマシーンといったゲストと一緒に楽しめるコンテンツなどのご紹介もさせていただいております。（紹介料は頂戴しておりません。）『必要なものだけを手配します』をコンセプトとしておりますので、ご自身で準備されるアイテムの持ち込みも歓迎です。",
+              },
+              {
+                title: "パーティ当日",
+                description:
+                  "本番は、スタッフによる設営（前日or当日の早朝）とサポートで、オリジナリティ溢れるウェディングパーティーを一緒に作り上げます。",
+              },
+            ].map(({ title, description }, index) => (
+              <div className="mb-10" key={index}>
+                <p className="font-bold text-xl mb-4">
+                  <span className="mr-4">{`Step ${index + 1}.`}</span>
+                  {title}
+                </p>
+                <p>{description}</p>
+              </div>
+            ))}
           </div>
+          <Link to="/schedule">
+            <Button label="More" className="mb-10" />
+          </Link>
+          <img src={frame} alt="" className="" />
         </div>
-      </section>
-      <section className="py-24 max-w-screen-lg m-auto pb-32">
+      </Section>
+      <Section sectionClass="pb-32">
         <Title enLabel="Media Coverage" jaLabel="メディア掲載情報" />
         <div className="border-2 border-black px-10 py-5 rounded-md divide-y-2 > *">
           {[...coverageList]
@@ -206,7 +210,7 @@ export default function Home() {
               </div>
             ))}
         </div>
-      </section>
+      </Section>
       <Balloon />
     </div>
   );

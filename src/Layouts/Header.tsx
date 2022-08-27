@@ -38,16 +38,16 @@ export default function Header() {
   );
 
   return (
-    <header className="p-3 sticky bg-white font-['Helvetica'] z-20 shadow-sm top-0 md:-top-12 opacity-90">
-      <div className="z-10 relative">
+    <header className="sticky top-0 z-20 bg-white p-3 font-['Helvetica'] opacity-95 shadow-sm md:-top-12">
+      <div className="relative z-10">
         <Link to="/">
-          <img src={awesome} alt="icon" className="w-16 mb-1 m-auto" />
+          <img src={awesome} alt="icon" className="m-auto mb-1 w-16" />
         </Link>
-        <div className="block absolute right-0 -top-1 md:hidden">
+        <div className="absolute right-0 -top-1 block md:hidden">
           <Hamburger toggled={isOpen} toggle={setIsOpen} />
         </div>
       </div>
-      <nav className="hidden md:flex justify-center gap-10 whitespace-nowrap items-center sticky top-0">
+      <nav className="sticky top-0 hidden items-center justify-center gap-10 whitespace-nowrap md:flex">
         {pageList.map(({ enTitle, jaTitle, url }, index) => (
           <Link key={index} to={url} className="flex flex-col items-center">
             <span className="font-bold">{enTitle}</span>
@@ -73,19 +73,19 @@ export default function Header() {
         </div>
       </nav>
       {isOpen && (
-        <div className="fixed top-0 right-0 left-0 bottom-0 bg-white flex justify-center items-center">
+        <div className="fixed top-0 right-0 left-0 bottom-0 flex items-center justify-center bg-white">
           <div className="">
             {pageList.map(({ enTitle, jaTitle, url }, index) => (
               <Link
                 key={index}
                 to={url}
-                className="flex flex-row items-center mb-4 gap-2"
+                className="mb-4 flex flex-row items-center gap-2"
               >
-                <span className="font-bold">{enTitle}</span>/
+                <span className="text-lg font-bold">{enTitle}</span>/
                 <span className="text-xs"> {jaTitle}</span>
               </Link>
             ))}
-            <div className="flex gap-4 mt-16">{snsLinks()}</div>
+            <div className="mt-16 flex gap-4">{snsLinks()}</div>
           </div>
         </div>
       )}

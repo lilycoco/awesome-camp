@@ -10,7 +10,7 @@ export default function Schedule() {
       <section className="m-auto w-fit">
         <div className="">
           {scheduleList.map(({ title, description }, index) => (
-            <div className="flex gap-10 relative">
+            <div className="flex gap-10 relative" key={index}>
               <div className="absolute border-l-2 border-black h-full left-10" />
               <div className="font-oleo text-3xl w-20 h-20 flex items-center justify-center rounded-full bg-white border-2 border-black z-10">{`0${
                 index + 1

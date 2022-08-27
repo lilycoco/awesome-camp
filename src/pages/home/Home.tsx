@@ -2,7 +2,6 @@ import React from "react";
 import back from "../../assets/images/back.jpg";
 import hands from "../../assets/images/hands.jpg";
 import cake from "../../assets/images/cake.jpeg";
-import service_3 from "../../assets/images/service_3.jpeg";
 import fes2 from "../../assets/images/fes2.jpeg";
 import plan_2 from "../../assets/images/plan_2.jpeg";
 import frame from "../../assets/parts/frame.png";
@@ -77,10 +76,10 @@ export default function Home() {
           </SwiperSlide>
         </Swiper>
       </>
-      <section className="py-24 max-w-screen-lg m-auto">
+      <Section>
         <Title
-          enLabel="Have an Awesome Outdoor Wedding!"
-          className="mb-20 m-auto text-5xl"
+          enLabel="Have an Awesome Wedding!"
+          className="mb-20 m-auto text-5xl text-center"
         />
         <p className="text-center leading-[3rem]">
           おふたりの好きな場所で
@@ -96,22 +95,26 @@ export default function Home() {
           お手伝いをさせていただきます。
           <br />
         </p>
-      </section>
-      <Section sectionClass="relative" wrapperClass="bg-light-brown-gray pb-20">
+      </Section>
+      <Section wrapperClass="bg-light-brown-gray pb-20">
         <Title enLabel="Concept" />
-        <div className="outlines font-['Optima'] text-9xl font-extrabold absolute">
-          AWESOME
-        </div>
-        <div className="m-auto mb-10 scroll-reveal bg-white p-10 w-160 relative z-10 top-20 opacity-90">
-          <h2 className="text-xl mb-5 font-bold">Awesome Camp & Glamping は</h2>
-          <p className="">
-            イベント・撮影等のプランニングからキャンプ、グランピングのレンタル事業、当日の設営、運営、美術監督まで行うアウトドアのスペシャリストです。
-            これまでアウトドアウェディングはもちろんのこと、CM・PV、テレビ番組、広告撮影や大型商業施設のイベント等、数多くのアウトドアシーンをプロデュースしてきました。
-            そんな私たちが培ってきたノウハウを活かして、フォトウェディングから、少人数でのプチパーティー、野外フェスのテイストを盛り込んだオリジナリティ溢れるアウトドアウェディングまで、ご希望のアウトドア空間作りをプロデュースします。
-          </p>
-        </div>
-        <div className="outlines font-['Optima'] text-7xl font-extrabold absolute right-0 -bottom-6">
-          WEDDING
+        <div className="relative">
+          <div className="outlines font-['Optima'] font-extrabold absolute text-5xl md:text-9xl top-11 md:top-0">
+            AWESOME
+          </div>
+          <div className="m-auto mb-10 scroll-reveal bg-white p-10 relative z-10 top-20 opacity-90 md:w-160 ">
+            <h2 className="text-xl mb-5 font-bold">
+              Awesome Camp & Glamping は
+            </h2>
+            <p className="">
+              イベント・撮影等のプランニングからキャンプ、グランピングのレンタル事業、当日の設営、運営、美術監督まで行うアウトドアのスペシャリストです。
+              これまでアウトドアウェディングはもちろんのこと、CM・PV、テレビ番組、広告撮影や大型商業施設のイベント等、数多くのアウトドアシーンをプロデュースしてきました。
+              そんな私たちが培ってきたノウハウを活かして、フォトウェディングから、少人数でのプチパーティー、野外フェスのテイストを盛り込んだオリジナリティ溢れるアウトドアウェディングまで、ご希望のアウトドア空間作りをプロデュースします。
+            </p>
+          </div>
+          <div className="outlines font-['Optima'] font-extrabold absolute right-0 -bottom-28 md:-bottom-40 text-5xl md:text-9xl">
+            WEDDING
+          </div>
         </div>
       </Section>
       <Section
@@ -120,7 +123,7 @@ export default function Home() {
       >
         {recommendList.map(({ title, description, src }, index) => (
           <RecommendContent
-            className={index % 2 ? "flex-row-reverse" : ""}
+            className={index % 2 ? "md:flex-row-reverse" : ""}
             key={index}
             title={title}
             description={description}
@@ -143,7 +146,7 @@ export default function Home() {
         <div className="m-auto max-w-screen-lg">
           <Title enLabel="Plan & Our Service" className="mb-20" />
         </div>
-        <div className="flex gap-5 max-w-screen-2xl m-auto">
+        <div className="flex gap-5 max-w-screen-2xl m-auto flex-col md:flex-row">
           <PlanContent
             title="Plans"
             description="プランのご紹介"
@@ -205,7 +208,11 @@ export default function Home() {
                 <span className="font-bold mr-10">{date}</span>
                 <div>
                   <div>{description}</div>
-                  {url && <Anchor url={url}>{url}</Anchor>}
+                  {url && (
+                    <Anchor url={url} className="break-all">
+                      {url}
+                    </Anchor>
+                  )}
                 </div>
               </div>
             ))}

@@ -14,7 +14,8 @@ export default function RecommendContent({
   return (
     <div
       className={
-        "flex justify-between w-full gap-10 scroll-reveal " + className
+        "flex justify-between gap-10 scroll-reveal m-auto flex-col md:flex-row " +
+        className
       }
     >
       <div className="w-full max-w-lg">

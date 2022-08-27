@@ -15,7 +15,7 @@ export default function Section({
   const wrapperStyle =
     "px-5 " + wrapperClass + (backgroundColor ? " gradient-gray" : "");
 
-  const sectionStyle = "py-24 max-w-screen-lg m-auto " + sectionClass;
+  const sectionStyle = " md:px-0 py-24 max-w-screen-lg m-auto " + sectionClass;
 
   return (
     <section className={wrapperStyle}>

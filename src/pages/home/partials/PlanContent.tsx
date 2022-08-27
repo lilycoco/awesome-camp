@@ -15,7 +15,7 @@ export default function PlanContent({
   url: string;
 }) {
   return (
-    <Link className="w-1/2 relative" to={url}>
+    <Link className="md:w-1/2 relative" to={url}>
       <div className="gradation relative">
         <img src={src} alt="top" className="w-auto filter brightness-110" />
       </div>

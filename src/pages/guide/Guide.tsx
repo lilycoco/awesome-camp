@@ -84,7 +84,7 @@ export default function Guide() {
             recommend1="手配関係が苦手なのでおまかせしたい"
             recommend2="ハンドメイドなウェディングをやりたいけど、なるべくゲストの手を借りたくない"
             src={plan_2}
-            className="flex-row-reverse"
+            className="md:flex-row-reverse"
           />
         </div>
         <div className="relative ml-5 rounded-lg border-2 border-double border-black p-5 md:mx-10">
@@ -103,7 +103,7 @@ export default function Guide() {
         <SubTitle en="Our Service" ja="Awesome Camp & Glamping ができるコト" />
         <div className="mb-20 flex-col md:flex md:h-60 md:flex-wrap">
           {serviceList.map(({ title }, index) => (
-            <div className="mb-2 max-w-2xl pr-5 md:w-1/2" key={index}>
+            <div className="mb-2 max-w-2xl pr-6 md:w-1/2" key={index}>
               <button
                 onClick={() => onClick(index)}
                 className="flex w-full bg-white p-2 px-4 text-left text-xl shadow-md"

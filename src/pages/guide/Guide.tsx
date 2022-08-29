@@ -101,16 +101,17 @@ export default function Guide() {
       </Section>
       <Section wrapperClass="bg-light-brown-gray">
         <SubTitle en="Our Service" ja="Awesome Camp & Glamping ができるコト" />
-        <div className="mb-20">
+        <div className="mb-20 flex-col md:flex md:h-60 md:flex-wrap">
           {serviceList.map(({ title }, index) => (
-            <button
-              key={index}
-              className="mb-2 flex w-full max-w-2xl bg-white p-2 px-4 text-left text-xl shadow-md"
-              onClick={() => onClick(index)}
-            >
-              <span className="mr-6 text-lg">{`0${index + 1}.`}</span>
-              {title}
-            </button>
+            <div className="mb-2 max-w-2xl pr-5 md:w-1/2" key={index}>
+              <button
+                onClick={() => onClick(index)}
+                className="flex w-full bg-white p-2 px-4 text-left text-xl shadow-md"
+              >
+                <span className="mr-6 text-lg">{`0${index + 1}.`}</span>
+                {title}
+              </button>
+            </div>
           ))}
         </div>
         <>

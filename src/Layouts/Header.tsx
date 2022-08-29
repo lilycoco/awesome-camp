@@ -54,7 +54,7 @@ export default function Header() {
             <span className="text-xs"> {jaTitle}</span>
           </Link>
         ))}
-        <div className="flex gap-6">
+        <div className="flex gap-5">
           <Icon
             href="https://www.youtube.com/channel/UCPglpd7wKzyBYzc4GKcfr3g?view_as=subscriber"
             src={youtube}

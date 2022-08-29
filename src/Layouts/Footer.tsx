@@ -11,7 +11,7 @@ export default function Footer() {
   const SnsLinks = ({ className }: { className?: string }) => (
     <div className={"flex items-center gap-5 " + className}>
       <p className="whitespace-nowrap">Find Us On:</p>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-5">
         <Icon
           href="https://www.youtube.com/channel/UCPglpd7wKzyBYzc4GKcfr3g?view_as=subscriber"
           src={youtube}
@@ -32,23 +32,23 @@ export default function Footer() {
   );
 
   return (
-    <footer className="font-['Helvetica'] bg-[#F7F7F7]">
-      <div className="pt-10 px-10 pb-16 max-w-4xl m-auto md:flex items-start gap-32">
-        <SnsLinks className="hidden md:block" />
-        <div className="flex flex-col flex-wrap h-48 w-72 justify-between mb-12 md:mb-0">
+    <footer className="bg-[#F7F7F7] font-['Helvetica']">
+      <div className="m-auto max-w-4xl items-start gap-32 px-10 pt-10 pb-16 md:flex">
+        <SnsLinks className="hidden md:flex" />
+        <div className="mb-12 flex h-48 w-72 flex-col flex-wrap justify-between md:mb-0">
           {pageList.map(({ enTitle, jaTitle, url }, index) => (
-            <Link key={index} className="flex flex-col w-32" to={url}>
+            <Link key={index} className="flex w-32 flex-col" to={url}>
               <span className="font-bold">{enTitle}</span>
               <span className="text-xs"> {jaTitle}</span>
             </Link>
           ))}
         </div>
-        <SnsLinks className="block md:hidden mb-12" />
+        <SnsLinks className="mb-12 block md:hidden" />
         <Link to="/">
-          <img src={awesome} alt="icon" className="mb-3 w-32 m-auto" />
+          <img src={awesome} alt="icon" className="m-auto mb-3 w-32" />
         </Link>
       </div>
-      <p className="text-center text-sm pb-5">©︎2022 Awesome Camp & Glamping</p>
+      <p className="pb-5 text-center text-sm">©︎2022 Awesome Camp & Glamping</p>
     </footer>
   );
 }

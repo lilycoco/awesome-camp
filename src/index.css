@@ -38,7 +38,21 @@ code {
 
 .gradient-gray {
   background: linear-gradient(to bottom, #f1eeea, #fff);
-  /*グラデーション以外は省略*/
+}
+
+.animation {
+  animation-name: animation;
+  animation-duration: 0.5s;
+}
+
+@keyframes animation {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
 }
 
 @layer components {

@@ -13,12 +13,12 @@ export default function ReportCard({
   };
 }) {
   return (
-    <div className="min-w-fit mb-10">
-      <div className="w-80 mb-2">
-        <div className="w-full h-0 relative pt-[56.25%]">
+    <div className="mb-10 min-w-fit">
+      <div className="mb-2 w-80">
+        <div className="relative h-0 w-full pt-[56.25%]">
           {youtube ? (
             <iframe
-              className="absolute top-0 left-0 w-full h-full"
+              className="absolute top-0 left-0 h-full w-full"
               src={`https://www.youtube.com/embed/${youtube}?controls=0`}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -28,18 +28,20 @@ export default function ReportCard({
             <img
               src={imgUrl}
               alt="report"
-              className="absolute top-0 left-0 w-full h-full object-cover"
+              className="absolute top-0 left-0 h-full w-full object-cover"
             />
           )}
         </div>
       </div>
       <div className="w-80">
-        <div className="flex justify-between item-start text-xs ">
+        <div className="item-start flex justify-between text-xs ">
           <p>{location}</p>
           {report && (
             <a
-              className="font-bold border border-black px-2 font-['Helvetica'] shadow"
+              className="border border-black px-2 font-['Helvetica'] font-bold shadow"
               href={report}
+              target="_blank"
+              rel="noreferrer"
             >
               REPORT
             </a>

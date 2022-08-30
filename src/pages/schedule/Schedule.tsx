@@ -1,7 +1,8 @@
 import React from "react";
+
+import Section from "../../Layouts/Section";
 import Balloon from "../../components/Balloon";
 import Title from "../../components/Title";
-import Section from "../../Layouts/Section";
 import { scheduleList } from "../../lib/schedule";
 
 export default function Schedule() {

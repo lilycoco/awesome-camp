@@ -1,14 +1,14 @@
-import Home from "./home/Home";
-import Guide from "./guide/Guide";
-import Schedule from "./schedule/Schedule";
-import Report from "./report/Report";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Footer from "../Layouts/Footer";
+import Header from "../Layouts/Header";
+import ScrollToTop from "../ScrollToTop";
 import About from "./about/About";
 import Contact from "./contact/Contact";
-
-import Header from "../Layouts/Header";
-import Footer from "../Layouts/Footer";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ScrollToTop from "../ScrollToTop";
+import Guide from "./guide/Guide";
+import Home from "./home/Home";
+import Report from "./report/Report";
+import Schedule from "./schedule/Schedule";
 
 export default function App() {
   return (

@@ -1,11 +1,12 @@
 import React from "react";
-import { pageList } from "../lib/page";
-import youtube from "../assets/icon/youtube.png";
-import instagram from "../assets/icon/instagram.png";
+import { Link } from "react-router-dom";
+
 import awesome from "../assets/icon/awesome.png";
 import facebook from "../assets/icon/facebook.png";
-import { Link } from "react-router-dom";
+import instagram from "../assets/icon/instagram.png";
+import youtube from "../assets/icon/youtube.png";
 import Icon from "../components/Icon";
+import { pageList } from "../lib/page";
 
 export default function Footer() {
   const SnsLinks = ({ className }: { className?: string }) => (

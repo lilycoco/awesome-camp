@@ -1,10 +1,11 @@
 import React from "react";
-import Title from "../../components/Title";
+
+import Section from "../../Layouts/Section";
 import plan_1 from "../../assets/images/plan_1.jpeg";
 import plan_2 from "../../assets/images/plan_2.jpeg";
-import { serviceList } from "../../lib/services";
 import Balloon from "../../components/Balloon";
-import Section from "../../Layouts/Section";
+import Title from "../../components/Title";
+import { serviceList } from "../../lib/services";
 
 export default function Guide() {
   let myRef: (HTMLDivElement | null)[] = [];
@@ -68,7 +69,7 @@ export default function Guide() {
   return (
     <div>
       <Title enLabel="User Guide" className="m-auto pt-24" />
-      <Section>
+      <Section sectionClass="pt-5">
         <SubTitle en="Plans" ja="選べるプラン" />
         <div className="pb-16">
           <Plan

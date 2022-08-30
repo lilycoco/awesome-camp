@@ -1,7 +1,8 @@
 import React from "react";
+
+import Section from "../../Layouts/Section";
 import Button from "../../components/Button";
 import Title from "../../components/Title";
-import Section from "../../Layouts/Section";
 
 export default function Contact() {
   return (

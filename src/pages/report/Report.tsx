@@ -1,8 +1,9 @@
 import React from "react";
+
+import Section from "../../Layouts/Section";
 import Balloon from "../../components/Balloon";
 import ReportCard from "../../components/ReportCard";
 import Title from "../../components/Title";
-import Section from "../../Layouts/Section";
 import { reportList } from "../../lib/report";
 
 export default function Report() {

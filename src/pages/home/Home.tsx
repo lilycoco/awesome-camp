@@ -1,35 +1,31 @@
 import React from "react";
-import back from "../../assets/images/back.jpg";
-import hands from "../../assets/images/hands.jpg";
-import cake from "../../assets/images/cake.jpeg";
-import fes2 from "../../assets/images/fes2.jpeg";
-import plan_2 from "../../assets/images/plan_2.jpeg";
-import frame from "../../assets/parts/frame.png";
-import Title from "../../components/Title";
-import ReportCard from "../../components/ReportCard";
-import Button from "../../components/Button";
-import RecommendContent from "./partials/RecommendContent";
-// import ScrollReveal from "scrollreveal";
-import { reportList } from "../../lib/report";
-import { coverageList } from "../../lib/coverage";
-import { recommendList } from "../../lib/recommend";
-import PlanContent from "./partials/PlanContent";
 import { Link } from "react-router-dom";
-import Balloon from "../../components/Balloon";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import Anchor from "../../components/Anchor";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import Section from "../../Layouts/Section";
+import back from "../../assets/images/back.jpg";
+import cake from "../../assets/images/cake.jpeg";
+import fes2 from "../../assets/images/fes.jpeg";
+import hands from "../../assets/images/hands.jpg";
+import plan_2 from "../../assets/images/plan_2.jpeg";
+import frame from "../../assets/parts/frame.png";
+import Anchor from "../../components/Anchor";
+import Balloon from "../../components/Balloon";
+import Button from "../../components/Button";
+import ReportCard from "../../components/ReportCard";
+import Title from "../../components/Title";
+import { coverageList } from "../../lib/coverage";
+import { recommendList } from "../../lib/recommend";
+import { reportList } from "../../lib/report";
+import PlanContent from "./partials/PlanContent";
+import RecommendContent from "./partials/RecommendContent";
 
 export default function Home() {
-  // React.useEffect(() => {
-  //   ScrollReveal().reveal(".scroll-reveal", { delay: 500, origin: "down" });
-  // });
-
   return (
     <div>
       <>

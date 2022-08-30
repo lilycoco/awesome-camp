@@ -1,6 +1,6 @@
-import sky from "../assets/images/sky.jpg";
-import night from "../assets/images/night.jpg";
 import flower from "../assets/images/flower.jpg";
+import night from "../assets/images/night.jpg";
+import sky from "../assets/images/sky.jpg";
 
 export const recommendList = [
   {

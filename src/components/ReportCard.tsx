@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function ReportCard({
   report: { imgUrl, location, spaceName, date, report, youtube },
 }: {

@@ -25,6 +25,8 @@ import { recommendList } from "../../lib/recommend";
 import { reportList } from "../../lib/report";
 import PlanContent from "./partials/PlanContent";
 import RecommendContent from "./partials/RecommendContent";
+import React from "react";
+import ScrollRevealContainer from "../../components/ScrollRevealContainer";
 
 export default function Home() {
   return (
@@ -72,31 +74,12 @@ export default function Home() {
         </SwiperSlide>
       </Swiper>
       <Section>
-        <Plx
-          parallaxData={[
-            {
-              start: 0,
-              end: 600,
-              properties: [
-                {
-                  startValue: 0,
-                  endValue: 1,
-                  property: "opacity",
-                },
-                {
-                  startValue: 100,
-                  endValue: 0,
-                  property: "translateY",
-                },
-              ],
-            },
-          ]}
-        >
+        <ScrollRevealContainer move="bottom">
           <Title
             enLabel="Have an Awesome Outdoor Wedding!"
             className="m-auto text-center text-[2.8rem] md:text-5xl"
           />
-        </Plx>
+        </ScrollRevealContainer>
         <Plx
           parallaxData={[
             {
@@ -134,34 +117,19 @@ export default function Home() {
         </Plx>
       </Section>
       <Section wrapperClass="bg-light-brown-gray pb-20">
-        <Title enLabel="Concept" className="mb-0" />
+        <ScrollRevealContainer move="left">
+          <Title enLabel="Concept" className="mb-0" />
+        </ScrollRevealContainer>
         <div className="relative">
-          <Plx
-            parallaxData={[
-              {
-                start: 1000,
-                end: 1300,
-                properties: [
-                  {
-                    startValue: 0,
-                    endValue: 1,
-                    property: "opacity",
-                  },
-                  {
-                    startValue: 100,
-                    endValue: 0,
-                    property: "translateY",
-                  },
-                ],
-              },
-            ]}
-          >
+          <ScrollRevealContainer move="bottom">
             <div className="outlines absolute top-11 font-['Optima'] text-5xl font-extrabold md:top-0 md:text-9xl">
               AWESOME
             </div>
-            <div className="outlines absolute right-0 -bottom-28 font-['Optima'] text-5xl font-extrabold md:-bottom-40 md:text-9xl">
-              WEDDING
-            </div>
+          </ScrollRevealContainer>
+          <div className="outlines absolute right-0 -bottom-28 z-0 font-['Optima'] text-5xl font-extrabold md:-bottom-40 md:text-9xl">
+            WEDDING
+          </div>
+          <ScrollRevealContainer move="bottom" delay={1000} distance={100}>
             <div className="scroll-reveal relative top-20 z-10 m-auto mb-10 bg-white p-10 opacity-90 md:w-160 ">
               <h2 className="mb-5 text-xl font-bold">
                 Awesome Camp & Glamping は
@@ -172,7 +140,7 @@ export default function Home() {
                 そんな私たちが培ってきたノウハウを活かして、フォトウェディングから、少人数でのプチパーティー、野外フェスのテイストを盛り込んだオリジナリティ溢れるアウトドアウェディングまで、ご希望のアウトドア空間作りをプロデュースします。
               </p>
             </div>
-          </Plx>
+          </ScrollRevealContainer>
         </div>
       </Section>
       <Section
@@ -180,38 +148,20 @@ export default function Home() {
         sectionClass="flex flex-col gap-36 items-center w-full"
       >
         {recommendList.map(({ title, description, src }, index) => (
-          <Plx
-            parallaxData={[
-              {
-                start: 1300,
-                end: 1600,
-                properties: [
-                  {
-                    startValue: 0,
-                    endValue: 1,
-                    property: "opacity",
-                  },
-                  {
-                    startValue: 100,
-                    endValue: 0,
-                    property: "translateY",
-                  },
-                ],
-              },
-            ]}
-            key={index}
-          >
+          <ScrollRevealContainer move="bottom">
             <RecommendContent
               className={index % 2 ? "md:flex-row-reverse" : ""}
               title={title}
               description={description}
               src={src}
             />
-          </Plx>
+          </ScrollRevealContainer>
         ))}
       </Section>
       <Section>
-        <Title enLabel="Wedding Report" />
+        <ScrollRevealContainer move="left">
+          <Title enLabel="Wedding Report" />
+        </ScrollRevealContainer>
         <div className="mb-10 flex gap-5 overflow-scroll">
           {[...reportList].reverse().map((report, index) => (
             <ReportCard key={index} report={report} />
@@ -223,79 +173,92 @@ export default function Home() {
       </Section>
       <section className="m-auto mb-20 py-24 px-5">
         <div className="m-auto max-w-screen-lg">
-          <Title enLabel="Plan & Our Service" />
+          <ScrollRevealContainer move="left">
+            <Title enLabel="Plan & Our Service" />
+          </ScrollRevealContainer>
         </div>
-        <div className="m-auto flex max-w-screen-2xl flex-col gap-5 md:flex-row">
-          <PlanContent
-            title="Plans"
-            description="プランのご紹介"
-            src={plan_2}
-            url="/guide"
-          />
-          <PlanContent
-            title="Our Service"
-            description="私たちが出来ること"
-            src={hands}
-            url="/guide"
-          />
-        </div>
+        <ScrollRevealContainer move="bottom">
+          <div className="m-auto flex max-w-screen-2xl flex-col gap-5 md:flex-row">
+            <PlanContent
+              title="Plans"
+              description="プランのご紹介"
+              src={plan_2}
+              url="/guide"
+            />
+
+            <PlanContent
+              title="Our Service"
+              description="私たちが出来ること"
+              src={hands}
+              url="/guide"
+            />
+          </div>
+        </ScrollRevealContainer>
       </section>
       <Section wrapperClass="gradient-gray">
-        <Title enLabel="Schedule" jaLabel="スケジュール" />
-        <div className="m-auto max-w-3xl bg-white p-10 shadow-md">
-          <img src={frame} alt="" className="" />
-          <div className="my-16 mb-10 md:mx-10">
-            {[
-              {
-                title: "お問い合わせ",
-                description:
-                  "まずは、お問合せフォームよりお気軽にご連絡下さい。",
-              },
-              {
-                title: "お打ち合わせ",
-                description:
-                  "コンセプトやご予算、開催場所など、ご要望をお伺いさせていただきます。必要に応じて開催場所や、お食事、楽しいフォトバスやポートレートマシーンといったゲストと一緒に楽しめるコンテンツなどのご紹介もさせていただいております。（紹介料は頂戴しておりません。）『必要なものだけを手配します』をコンセプトとしておりますので、ご自身で準備されるアイテムの持ち込みも歓迎です。",
-              },
-              {
-                title: "パーティ当日",
-                description:
-                  "本番は、スタッフによる設営（前日or当日の早朝）とサポートで、オリジナリティ溢れるウェディングパーティーを一緒に作り上げます。",
-              },
-            ].map(({ title, description }, index) => (
-              <div className="mb-10" key={index}>
-                <p className="mb-4 text-2xl font-bold">
-                  <span className="mr-4">{`Step ${index + 1}.`}</span>
-                  {title}
-                </p>
-                <p>{description}</p>
-              </div>
-            ))}
+        <ScrollRevealContainer move="left">
+          <Title enLabel="Schedule" jaLabel="スケジュール" />
+        </ScrollRevealContainer>
+        <ScrollRevealContainer move="bottom">
+          <div className="m-auto max-w-3xl bg-white p-10 shadow-md">
+            <img src={frame} alt="" className="" />
+            <div className="my-16 mb-10 md:mx-10">
+              {[
+                {
+                  title: "お問い合わせ",
+                  description:
+                    "まずは、お問合せフォームよりお気軽にご連絡下さい。",
+                },
+                {
+                  title: "お打ち合わせ",
+                  description:
+                    "コンセプトやご予算、開催場所など、ご要望をお伺いさせていただきます。必要に応じて開催場所や、お食事、楽しいフォトバスやポートレートマシーンといったゲストと一緒に楽しめるコンテンツなどのご紹介もさせていただいております。（紹介料は頂戴しておりません。）『必要なものだけを手配します』をコンセプトとしておりますので、ご自身で準備されるアイテムの持ち込みも歓迎です。",
+                },
+                {
+                  title: "パーティ当日",
+                  description:
+                    "本番は、スタッフによる設営（前日or当日の早朝）とサポートで、オリジナリティ溢れるウェディングパーティーを一緒に作り上げます。",
+                },
+              ].map(({ title, description }, index) => (
+                <div className="mb-10" key={index}>
+                  <p className="mb-4 text-2xl font-bold">
+                    <span className="mr-4">{`Step ${index + 1}.`}</span>
+                    {title}
+                  </p>
+                  <p>{description}</p>
+                </div>
+              ))}
+            </div>
+            <Link to="/schedule">
+              <Button label="More" className="mb-10" />
+            </Link>
+            <img src={frame} alt="" className="" />
           </div>
-          <Link to="/schedule">
-            <Button label="More" className="mb-10" />
-          </Link>
-          <img src={frame} alt="" className="" />
-        </div>
+        </ScrollRevealContainer>
       </Section>
       <Section sectionClass="pb-32">
-        <Title enLabel="Media Coverage" />
-        <div className="> * divide-y-2 rounded-md border-2 border-black py-1 px-5 md:py-5 md:px-10">
-          {[...coverageList]
-            .reverse()
-            .map(({ date, description, url }, index) => (
-              <div className="flex gap-5 py-4 md:gap-10" key={index}>
-                <span className="font-bold">{date}</span>
-                <div>
-                  <div>{description}</div>
-                  {url && (
-                    <Anchor url={url} className="break-all">
-                      {url}
-                    </Anchor>
-                  )}
+        <ScrollRevealContainer move="left">
+          <Title enLabel="Media Coverage" />
+        </ScrollRevealContainer>
+        <ScrollRevealContainer move="bottom">
+          <div className="> * divide-y-2 rounded-md border-2 border-black py-1 px-5 md:py-5 md:px-10">
+            {[...coverageList]
+              .reverse()
+              .map(({ date, description, url }, index) => (
+                <div className="flex gap-5 py-4 md:gap-10" key={index}>
+                  <span className="font-bold">{date}</span>
+                  <div>
+                    <div>{description}</div>
+                    {url && (
+                      <Anchor url={url} className="break-all">
+                        {url}
+                      </Anchor>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
-        </div>
+              ))}
+          </div>
+        </ScrollRevealContainer>
       </Section>
       <Balloon />
     </div>

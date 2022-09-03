@@ -42,7 +42,11 @@ export default function Header() {
     <header className="sticky top-0 z-20 bg-white p-3 font-['Helvetica'] opacity-95 shadow-sm md:-top-12">
       <div className="relative z-10">
         <Link to="/">
-          <img src={awesome} alt="icon" className="m-auto mb-1 w-16" />
+          <img
+            src={awesome}
+            alt="icon"
+            className="m-auto mb-1 w-16 hover:scale-105"
+          />
         </Link>
         <div className="absolute right-0 -top-1 block md:hidden">
           <Hamburger toggled={isOpen} toggle={setIsOpen} />
@@ -50,28 +54,16 @@ export default function Header() {
       </div>
       <nav className="sticky top-0 hidden items-center justify-center gap-10 whitespace-nowrap md:flex">
         {pageList.map(({ enTitle, jaTitle, url }, index) => (
-          <Link key={index} to={url} className="flex flex-col items-center">
+          <Link
+            key={index}
+            to={url}
+            className="flex flex-col items-center hover:scale-105"
+          >
             <span className="font-bold">{enTitle}</span>
             <span className="text-xs"> {jaTitle}</span>
           </Link>
         ))}
-        <div className="flex gap-5">
-          <Icon
-            href="https://www.youtube.com/channel/UCPglpd7wKzyBYzc4GKcfr3g?view_as=subscriber"
-            src={youtube}
-            alt="youtube"
-          />
-          <Icon
-            href="https://www.instagram.com/awesome_camp_inc/"
-            src={instagram}
-            alt="instagram"
-          />
-          <Icon
-            href="https://www.facebook.com/awesomebarbecue.glamping/"
-            src={facebook}
-            alt="facebook"
-          />
-        </div>
+        <div className="flex gap-5">{snsLinks()}</div>
       </nav>
       {isOpen && (
         <div className="fixed top-0 right-0 left-0 bottom-0 flex items-center justify-center bg-white">

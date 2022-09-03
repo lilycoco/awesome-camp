@@ -1,4 +1,4 @@
-import React from "react";
+import Plx from "react-plx";
 import { Link } from "react-router-dom";
 import { EffectFade, Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/css";
@@ -6,6 +6,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Typewriter from "typewriter-effect";
 
 import Section from "../../Layouts/Section";
 import back from "../../assets/images/back.jpg";
@@ -28,89 +29,150 @@ import RecommendContent from "./partials/RecommendContent";
 export default function Home() {
   return (
     <div>
-      <>
-        <Swiper
-          spaceBetween={30}
-          centeredSlides={true}
-          autoplay={{
-            delay: 6000,
-            disableOnInteraction: false,
-          }}
-          effect={"fade"}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[EffectFade, Autoplay, Pagination, Navigation]}
-        >
-          <SwiperSlide>
-            <img
-              src={plan_2}
-              alt="top"
-              className="h-screen w-full object-cover"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src={back}
-              alt="top"
-              className="h-screen w-full object-cover"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src={cake}
-              alt="top"
-              className="h-screen w-full object-cover"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src={fes2}
-              alt="top"
-              className="h-screen w-full object-cover"
-            />
-          </SwiperSlide>
-        </Swiper>
-      </>
+      <div className="shutter">
+        {/* <div className="type-writer m-auto mb-14 w-fit text-center font-oleo text-[2.8rem] text-6xl leading-normal md:mb-16 md:text-5xl">
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+                .typeString("Have an Awesome Outdoor Wedding!")
+                .pauseFor(500)
+                .start();
+            }}
+          />
+        </div> */}
+      </div>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 6000,
+          disableOnInteraction: false,
+        }}
+        effect={"fade"}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[EffectFade, Autoplay, Pagination, Navigation]}
+      >
+        <SwiperSlide>
+          <img
+            src={plan_2}
+            alt="top"
+            className="h-screen w-full object-cover"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={back} alt="top" className="h-screen w-full object-cover" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={cake} alt="top" className="h-screen w-full object-cover" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={fes2} alt="top" className="h-screen w-full object-cover" />
+        </SwiperSlide>
+      </Swiper>
       <Section>
-        <Title
-          enLabel="Have an Awesome Outdoor Wedding!"
-          className="m-auto text-center text-[2.8rem] md:text-5xl"
-        />
-        <p className="text-center leading-[3rem]">
-          おふたりの好きな場所で
-          <br />
-          好きなスタイルで
-          <br />
-          大切な人たちと
-          <br />
-          "Awesome 最高" な時間を過ごして欲しい。
-          <br /> そんな思いを持って
-          <br /> オーダーメイドでおふたりらしい空間作りの
-          <br />
-          お手伝いをさせていただきます。
-          <br />
-        </p>
+        <Plx
+          parallaxData={[
+            {
+              start: 0,
+              end: 600,
+              properties: [
+                {
+                  startValue: 0,
+                  endValue: 1,
+                  property: "opacity",
+                },
+                {
+                  startValue: 100,
+                  endValue: 0,
+                  property: "translateY",
+                },
+              ],
+            },
+          ]}
+        >
+          <Title
+            enLabel="Have an Awesome Outdoor Wedding!"
+            className="m-auto text-center text-[2.8rem] md:text-5xl"
+          />
+        </Plx>
+        <Plx
+          parallaxData={[
+            {
+              start: 300,
+              end: 800,
+              properties: [
+                {
+                  startValue: 0,
+                  endValue: 1,
+                  property: "opacity",
+                },
+                {
+                  startValue: 100,
+                  endValue: 0,
+                  property: "translateY",
+                },
+              ],
+            },
+          ]}
+        >
+          <p className="text-center leading-[3rem]">
+            おふたりの好きな場所で
+            <br />
+            好きなスタイルで
+            <br />
+            大切な人たちと
+            <br />
+            "Awesome 最高" な時間を過ごして欲しい。
+            <br /> そんな思いを持って
+            <br /> オーダーメイドでおふたりらしい空間作りの
+            <br />
+            お手伝いをさせていただきます。
+            <br />
+          </p>
+        </Plx>
       </Section>
       <Section wrapperClass="bg-light-brown-gray pb-20">
         <Title enLabel="Concept" className="mb-0" />
         <div className="relative">
-          <div className="outlines absolute top-11 font-['Optima'] text-5xl font-extrabold md:top-0 md:text-9xl">
-            AWESOME
-          </div>
-          <div className="scroll-reveal relative top-20 z-10 m-auto mb-10 bg-white p-10 opacity-90 md:w-160 ">
-            <h2 className="mb-5 text-xl font-bold">
-              Awesome Camp & Glamping は
-            </h2>
-            <p className="">
-              イベント・撮影等のプランニングからキャンプ、グランピングのレンタル事業、当日の設営、運営、美術監督まで行うアウトドアのスペシャリストです。
-              これまでアウトドアウェディングはもちろんのこと、CM・PV、テレビ番組、広告撮影や大型商業施設のイベント等、数多くのアウトドアシーンをプロデュースしてきました。
-              そんな私たちが培ってきたノウハウを活かして、フォトウェディングから、少人数でのプチパーティー、野外フェスのテイストを盛り込んだオリジナリティ溢れるアウトドアウェディングまで、ご希望のアウトドア空間作りをプロデュースします。
-            </p>
-          </div>
-          <div className="outlines absolute right-0 -bottom-28 font-['Optima'] text-5xl font-extrabold md:-bottom-40 md:text-9xl">
-            WEDDING
-          </div>
+          <Plx
+            parallaxData={[
+              {
+                start: 1000,
+                end: 1300,
+                properties: [
+                  {
+                    startValue: 0,
+                    endValue: 1,
+                    property: "opacity",
+                  },
+                  {
+                    startValue: 100,
+                    endValue: 0,
+                    property: "translateY",
+                  },
+                ],
+              },
+            ]}
+          >
+            <div className="outlines absolute top-11 font-['Optima'] text-5xl font-extrabold md:top-0 md:text-9xl">
+              AWESOME
+            </div>
+            <div className="outlines absolute right-0 -bottom-28 font-['Optima'] text-5xl font-extrabold md:-bottom-40 md:text-9xl">
+              WEDDING
+            </div>
+            <div className="scroll-reveal relative top-20 z-10 m-auto mb-10 bg-white p-10 opacity-90 md:w-160 ">
+              <h2 className="mb-5 text-xl font-bold">
+                Awesome Camp & Glamping は
+              </h2>
+              <p className="">
+                イベント・撮影等のプランニングからキャンプ、グランピングのレンタル事業、当日の設営、運営、美術監督まで行うアウトドアのスペシャリストです。
+                これまでアウトドアウェディングはもちろんのこと、CM・PV、テレビ番組、広告撮影や大型商業施設のイベント等、数多くのアウトドアシーンをプロデュースしてきました。
+                そんな私たちが培ってきたノウハウを活かして、フォトウェディングから、少人数でのプチパーティー、野外フェスのテイストを盛り込んだオリジナリティ溢れるアウトドアウェディングまで、ご希望のアウトドア空間作りをプロデュースします。
+              </p>
+            </div>
+          </Plx>
         </div>
       </Section>
       <Section
@@ -118,13 +180,34 @@ export default function Home() {
         sectionClass="flex flex-col gap-36 items-center w-full"
       >
         {recommendList.map(({ title, description, src }, index) => (
-          <RecommendContent
-            className={index % 2 ? "md:flex-row-reverse" : ""}
+          <Plx
+            parallaxData={[
+              {
+                start: 1300,
+                end: 1600,
+                properties: [
+                  {
+                    startValue: 0,
+                    endValue: 1,
+                    property: "opacity",
+                  },
+                  {
+                    startValue: 100,
+                    endValue: 0,
+                    property: "translateY",
+                  },
+                ],
+              },
+            ]}
             key={index}
-            title={title}
-            description={description}
-            src={src}
-          />
+          >
+            <RecommendContent
+              className={index % 2 ? "md:flex-row-reverse" : ""}
+              title={title}
+              description={description}
+              src={src}
+            />
+          </Plx>
         ))}
       </Section>
       <Section>

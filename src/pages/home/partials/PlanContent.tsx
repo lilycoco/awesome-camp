@@ -14,12 +14,12 @@ export default function PlanContent({
   url: string;
 }) {
   return (
-    <Link className="md:w-1/2 relative" to={url}>
+    <Link className="relative md:w-1/2 " to={url}>
       <div className="gradation relative">
-        <img src={src} alt="top" className="w-auto filter brightness-110" />
+        <img src={src} alt="top" className="w-auto brightness-110 filter" />
       </div>
-      <div className="absolute top-5 md:top-10 left-5 md:left-10 text-white font-['Noto_Sans']">
-        <p className="text-5xl font-extrabold mb-3">{title}</p>
+      <div className="absolute top-5 left-5 font-['Noto_Sans'] text-white md:top-10 md:left-10">
+        <p className="mb-3 text-5xl font-extrabold">{title}</p>
         <p className="mb-4">{description}</p>
       </div>
     </Link>

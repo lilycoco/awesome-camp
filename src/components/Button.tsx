@@ -10,7 +10,7 @@ export default function Button({
   return (
     <button
       className={
-        "bg-white text-black min-w-[220px] h-10 items-center justify-center flex m-auto border-2 border-black " +
+        "m-auto flex h-10 min-w-[220px] items-center justify-center border-2 border-black bg-white text-black " +
         className
       }
       onClick={() => {}}

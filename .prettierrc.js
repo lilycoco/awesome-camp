@@ -9,4 +9,5 @@ module.exports = {
     "^[./]",
   ],
   importOrderSeparation: true,
+  plugins: [require("prettier-plugin-tailwindcss")],
 };

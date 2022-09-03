@@ -34,11 +34,15 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#F7F7F7] font-['Helvetica']">
-      <div className="m-auto max-w-4xl items-start gap-32 px-10 pt-10 pb-16 md:flex">
+      <div className="m-auto max-w-4xl items-start justify-between gap-32 px-10 pt-10 pb-16 md:flex">
         <SnsLinks className="hidden md:flex" />
-        <div className="mb-12 flex h-48 w-72 flex-col flex-wrap justify-between md:mb-0">
+        <div className="mb-12 flex h-48 w-full flex-col flex-wrap justify-between md:mb-0 md:w-112">
           {pageList.map(({ enTitle, jaTitle, url }, index) => (
-            <Link key={index} className="flex w-32 flex-col" to={url}>
+            <Link
+              key={index}
+              className="flex w-32 flex-col hover:scale-105"
+              to={url}
+            >
               <span className="font-bold">{enTitle}</span>
               <span className="text-xs"> {jaTitle}</span>
             </Link>
@@ -46,7 +50,11 @@ export default function Footer() {
         </div>
         <SnsLinks className="mb-12 block md:hidden" />
         <Link to="/">
-          <img src={awesome} alt="icon" className="m-auto mb-3 w-32" />
+          <img
+            src={awesome}
+            alt="icon"
+            className="m-auto mb-3 w-32 hover:scale-105"
+          />
         </Link>
       </div>
       <p className="pb-5 text-center text-sm">©︎2022 Awesome Camp & Glamping</p>

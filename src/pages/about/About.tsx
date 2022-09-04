@@ -4,6 +4,7 @@ import Section from "../../Layouts/Section";
 import Anchor from "../../components/Anchor";
 import Balloon from "../../components/Balloon";
 import Title from "../../components/Title";
+import ScrollRevealContainer from "../../components/ScrollRevealContainer";
 
 export default function About() {
   const InfoContainer = ({
@@ -25,7 +26,9 @@ export default function About() {
     <Section wrapperClass="bg-light-brown-gray" sectionClass="max-w-screen-md">
       <Title enLabel="About Us" className="m-auto" />
       <div className="mb-36">
-        <div className="mb-14 font-['Noto_Sans'] text-3xl">Company</div>
+        <ScrollRevealContainer origin="left" delay={600}>
+          <div className="mb-14 font-['Noto_Sans'] text-3xl">Company</div>
+        </ScrollRevealContainer>
         <div className="border-t border-gray-400">
           <InfoContainer
             title="Company Name"
@@ -46,7 +49,9 @@ export default function About() {
         </div>
       </div>
       <div className="mb-20">
-        <div className="mb-14 font-['Noto_Sans'] text-3xl">History</div>
+        <ScrollRevealContainer origin="left">
+          <div className="mb-14 font-['Noto_Sans'] text-3xl">History</div>
+        </ScrollRevealContainer>
         <div className="border-t border-gray-400">
           <InfoContainer
             title="2014.04"

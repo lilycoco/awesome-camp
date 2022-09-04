@@ -74,12 +74,10 @@ export default function Home() {
         </SwiperSlide>
       </Swiper>
       <Section>
-        <ScrollRevealContainer move="bottom">
-          <Title
-            enLabel="Have an Awesome Outdoor Wedding!"
-            className="m-auto text-center text-[2.8rem] md:text-5xl"
-          />
-        </ScrollRevealContainer>
+        <Title
+          enLabel="Have an Awesome Outdoor Wedding!"
+          className="m-auto text-center text-[2.8rem] md:text-5xl"
+        />
         <Plx
           parallaxData={[
             {
@@ -117,11 +115,9 @@ export default function Home() {
         </Plx>
       </Section>
       <Section wrapperClass="bg-light-brown-gray pb-20">
-        <ScrollRevealContainer move="left">
-          <Title enLabel="Concept" className="mb-0" />
-        </ScrollRevealContainer>
+        <Title enLabel="Concept" className="mb-0" />
         <div className="relative">
-          <ScrollRevealContainer move="bottom">
+          <ScrollRevealContainer>
             <div className="outlines absolute top-11 font-['Optima'] text-5xl font-extrabold md:top-0 md:text-9xl">
               AWESOME
             </div>
@@ -129,7 +125,7 @@ export default function Home() {
           <div className="outlines absolute right-0 -bottom-28 z-0 font-['Optima'] text-5xl font-extrabold md:-bottom-40 md:text-9xl">
             WEDDING
           </div>
-          <ScrollRevealContainer move="bottom" delay={1000} distance={100}>
+          <ScrollRevealContainer delay={1000} distance={100}>
             <div className="scroll-reveal relative top-20 z-10 m-auto mb-10 bg-white p-10 opacity-90 md:w-160 ">
               <h2 className="mb-5 text-xl font-bold">
                 Awesome Camp & Glamping は
@@ -148,7 +144,7 @@ export default function Home() {
         sectionClass="flex flex-col gap-36 items-center w-full"
       >
         {recommendList.map(({ title, description, src }, index) => (
-          <ScrollRevealContainer move="bottom">
+          <ScrollRevealContainer>
             <RecommendContent
               className={index % 2 ? "md:flex-row-reverse" : ""}
               title={title}
@@ -159,25 +155,23 @@ export default function Home() {
         ))}
       </Section>
       <Section>
-        <ScrollRevealContainer move="left">
-          <Title enLabel="Wedding Report" />
+        <Title enLabel="Wedding Report" />
+        <ScrollRevealContainer>
+          <div className="mb-10 flex gap-5 overflow-scroll">
+            {[...reportList].reverse().map((report, index) => (
+              <ReportCard key={index} report={report} />
+            ))}
+          </div>
         </ScrollRevealContainer>
-        <div className="mb-10 flex gap-5 overflow-scroll">
-          {[...reportList].reverse().map((report, index) => (
-            <ReportCard key={index} report={report} />
-          ))}
-        </div>
         <Link to="/report">
           <Button label="More" />
         </Link>
       </Section>
       <section className="m-auto mb-20 py-24 px-5">
         <div className="m-auto max-w-screen-lg">
-          <ScrollRevealContainer move="left">
-            <Title enLabel="Plan & Our Service" />
-          </ScrollRevealContainer>
+          <Title enLabel="Plan & Our Service" />
         </div>
-        <ScrollRevealContainer move="bottom">
+        <ScrollRevealContainer>
           <div className="m-auto flex max-w-screen-2xl flex-col gap-5 md:flex-row">
             <PlanContent
               title="Plans"
@@ -196,10 +190,8 @@ export default function Home() {
         </ScrollRevealContainer>
       </section>
       <Section wrapperClass="gradient-gray">
-        <ScrollRevealContainer move="left">
-          <Title enLabel="Schedule" jaLabel="スケジュール" />
-        </ScrollRevealContainer>
-        <ScrollRevealContainer move="bottom">
+        <Title enLabel="Schedule" jaLabel="スケジュール" />
+        <ScrollRevealContainer>
           <div className="m-auto max-w-3xl bg-white p-10 shadow-md">
             <img src={frame} alt="" className="" />
             <div className="my-16 mb-10 md:mx-10">
@@ -237,10 +229,8 @@ export default function Home() {
         </ScrollRevealContainer>
       </Section>
       <Section sectionClass="pb-32">
-        <ScrollRevealContainer move="left">
-          <Title enLabel="Media Coverage" />
-        </ScrollRevealContainer>
-        <ScrollRevealContainer move="bottom">
+        <Title enLabel="Media Coverage" />
+        <ScrollRevealContainer>
           <div className="> * divide-y-2 rounded-md border-2 border-black py-1 px-5 md:py-5 md:px-10">
             {[...coverageList]
               .reverse()

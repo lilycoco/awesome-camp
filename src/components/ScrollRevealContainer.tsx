@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import scrollReveal from "scrollreveal";
 
 interface ScrollRevealContainerProps {
-  move?: string;
+  origin?: string;
   children: React.ReactElement;
   delay?: number;
   distance?: number;
@@ -11,7 +11,7 @@ interface ScrollRevealContainerProps {
 
 export default function ScrollRevealContainer({
   children,
-  move,
+  origin = "bottom",
   delay = 400,
   distance = 40,
   reset = true,
@@ -25,16 +25,9 @@ export default function ScrollRevealContainer({
         distance: `${distance}px`,
         opacity: 0,
         reset,
-        origin:
-          move === "left"
-            ? "left"
-            : move === "right"
-            ? "right"
-            : move === "top"
-            ? "top"
-            : "bottom",
+        origin,
       });
-  }, [move, sectionRef, delay, distance, reset]);
+  }, [origin, sectionRef, delay, distance, reset]);
 
   return <section ref={sectionRef}>{children}</section>;
 }

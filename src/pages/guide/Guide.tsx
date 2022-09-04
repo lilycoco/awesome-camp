@@ -6,12 +6,19 @@ import plan_2 from "../../assets/images/plan_2.jpeg";
 import Balloon from "../../components/Balloon";
 import Title from "../../components/Title";
 import { serviceList } from "../../lib/services";
+import ScrollRevealContainer from "../../components/ScrollRevealContainer";
 
 export default function Guide() {
-  let myRef: (HTMLDivElement | null)[] = [];
-
   const onClick = (index: number) => {
-    myRef[index]?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const id = `service${index}`;
+    const yOffset = -120;
+    const element = document.getElementById(id);
+    const y =
+      element &&
+      element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    if (y) {
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
   };
 
   const SubTitle = ({ en, ja }: { en: string; ja: string }) => (
@@ -39,31 +46,33 @@ export default function Guide() {
     src: string;
     className?: string;
   }) => (
-    <div
-      className={
-        "scroll-reveal mb-24 flex w-full flex-col justify-between gap-12 md:flex-row " +
-        className
-      }
-    >
-      <div className="w-full">
-        <h2 className="mb-5 text-2xl font-bold">{title}</h2>
-        <p>{description}</p>
-        <div className="mt-4 rounded-md">
-          <span className="font-bold">
-            {"[ こんなおふたりにおすすめです ]"}
-          </span>
-          <ul className="ml-4 list-disc underline decoration-yellow decoration-2 underline-offset-4">
-            <li>{recommend1}</li>
-            <li>{recommend2}</li>
-          </ul>
+    <ScrollRevealContainer>
+      <div
+        className={
+          "scroll-reveal mb-24 flex w-full flex-col justify-between gap-12 md:flex-row " +
+          className
+        }
+      >
+        <div className="w-full">
+          <h2 className="mb-5 text-2xl font-bold">{title}</h2>
+          <p>{description}</p>
+          <div className="mt-4 rounded-md">
+            <span className="font-bold">
+              {"[ こんなおふたりにおすすめです ]"}
+            </span>
+            <ul className="ml-4 list-disc underline decoration-yellow decoration-2 underline-offset-4">
+              <li>{recommend1}</li>
+              <li>{recommend2}</li>
+            </ul>
+          </div>
         </div>
+        <img
+          src={src}
+          alt="recommend"
+          className="h-80 w-125 rounded-xl object-cover"
+        />
       </div>
-      <img
-        src={src}
-        alt="recommend"
-        className="h-80 w-125 rounded-xl object-cover"
-      />
-    </div>
+    </ScrollRevealContainer>
   );
 
   return (
@@ -88,17 +97,19 @@ export default function Guide() {
             className="md:flex-row-reverse"
           />
         </div>
-        <div className="relative ml-5 rounded-lg border-2 border-double border-black p-5 md:mx-10">
-          <div className="absolute -top-12 -left-10 flex h-20 w-20 items-center justify-center rounded-full bg-yellow font-oleo text-2xl md:-top-12 md:-left-12">
-            Tips!
+        <ScrollRevealContainer>
+          <div className="relative ml-5 rounded-lg border-2 border-double border-black p-5 md:mx-10">
+            <div className="absolute -top-12 -left-10 flex h-20 w-20 items-center justify-center rounded-full bg-yellow font-oleo text-2xl md:-top-12 md:-left-12">
+              Tips!
+            </div>
+            <p>
+              どちらのプランも『必要なものだけを手配します』をコンセプトとしておりますので、ご自身で準備されるアイテムの持ち込みも歓迎です！
+              コンセプトとコストに見合ったアウトドアウェディングパーティーをご提供いたします。
+              <br />
+              必要なものの手配やパーティの司会進行についてなど、お気軽にご相談ください。
+            </p>
           </div>
-          <p>
-            どちらのプランも『必要なものだけを手配します』をコンセプトとしておりますので、ご自身で準備されるアイテムの持ち込みも歓迎です！
-            コンセプトとコストに見合ったアウトドアウェディングパーティーをご提供いたします。
-            <br />
-            必要なものの手配やパーティの司会進行についてなど、お気軽にご相談ください。
-          </p>
-        </div>
+        </ScrollRevealContainer>
       </Section>
       <Section wrapperClass="bg-light-brown-gray">
         <SubTitle en="Our Service" ja="Awesome Camp & Glamping ができるコト" />
@@ -117,27 +128,29 @@ export default function Guide() {
         </div>
         <>
           {serviceList.map(({ title, description, img }, index) => (
-            <div
-              key={index}
-              className="-gap-10 mb-10 flex flex-col md:flex-row"
-            >
+            <ScrollRevealContainer>
               <div
-                className="z-10 -mb-5 -mr-14 block w-full rounded-lg bg-white p-8 opacity-90 shadow-md md:mb-2 md:max-w-2xl"
-                id={`service${index}`}
-                ref={(ref) => (myRef[index] = ref)}
+                key={index}
+                className="-gap-10 mb-10 flex flex-col md:flex-row"
               >
-                <h3 className="mb-4 text-xl font-bold">
-                  <span className="mr-6 text-2xl">{`0${index + 1}.`}</span>
-                  {title}
-                </h3>
-                <div>{description}</div>
+                <div
+                  className="z-10 mt-5 -mb-5 -mr-14 block w-full rounded-lg bg-white p-8 opacity-90 shadow-md md:mb-2 md:max-w-2xl"
+                  id={`service${index}`}
+                >
+                  <h3 className="mb-4 text-xl font-bold">
+                    <span className="mr-6 text-2xl">{`0${index + 1}.`}</span>
+                    {title}
+                  </h3>
+                  <div>{description}</div>
+                </div>
+
+                <img
+                  src={img}
+                  alt="recommend"
+                  className="h-72 object-cover md:max-w-sm"
+                />
               </div>
-              <img
-                src={img}
-                alt="recommend"
-                className="h-72 object-cover md:max-w-sm"
-              />
-            </div>
+            </ScrollRevealContainer>
           ))}
         </>
       </Section>

@@ -1,3 +1,5 @@
+import ScrollRevealContainer from "./ScrollRevealContainer";
+
 export default function Title({
   enLabel,
   jaLabel,
@@ -8,12 +10,14 @@ export default function Title({
   className?: string;
 }) {
   return (
-    <h1
-      className={
-        "mb-14 w-fit font-oleo text-6xl leading-normal md:mb-20 " + className
-      }
-    >
-      {enLabel}
-    </h1>
+    <ScrollRevealContainer origin="left">
+      <h1
+        className={
+          "mb-14 w-fit font-oleo text-6xl leading-normal md:mb-20 " + className
+        }
+      >
+        {enLabel}
+      </h1>
+    </ScrollRevealContainer>
   );
 }

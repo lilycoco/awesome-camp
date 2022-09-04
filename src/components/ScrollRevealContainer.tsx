@@ -14,7 +14,7 @@ export default function ScrollRevealContainer({
   origin = "bottom",
   delay = 400,
   distance = 40,
-  reset = true,
+  reset = false,
 }: ScrollRevealContainerProps) {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -26,6 +26,7 @@ export default function ScrollRevealContainer({
         opacity: 0,
         reset,
         origin,
+        cleanup: true,
       });
   }, [origin, sectionRef, delay, distance, reset]);
 

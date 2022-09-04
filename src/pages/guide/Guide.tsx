@@ -11,7 +11,7 @@ import ScrollRevealContainer from "../../components/ScrollRevealContainer";
 export default function Guide() {
   const onClick = (index: number) => {
     const id = `service${index}`;
-    const yOffset = -120;
+    const yOffset = -70;
     const element = document.getElementById(id);
     const y =
       element &&
@@ -129,11 +129,11 @@ export default function Guide() {
         <>
           {serviceList.map(({ title, description, img }, index) => (
             <ScrollRevealContainer key={index}>
-              <div className="-gap-10 mb-10 flex flex-col md:flex-row">
-                <div
-                  className="z-10 mt-5 -mb-5 -mr-14 block w-full rounded-lg bg-white p-8 opacity-90 shadow-md md:mb-2 md:max-w-2xl"
-                  id={`service${index}`}
-                >
+              <div
+                className="-gap-10 mb-10 flex flex-col md:flex-row"
+                id={`service${index}`}
+              >
+                <div className="z-10 mt-5 -mb-5 -mr-14 block w-full rounded-lg bg-white p-8 opacity-90 shadow-md md:mb-2 md:max-w-2xl">
                   <h3 className="mb-4 text-xl font-bold">
                     <span className="mr-6 text-2xl">{`0${index + 1}.`}</span>
                     {title}

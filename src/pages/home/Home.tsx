@@ -37,7 +37,7 @@ export default function Home() {
           delay: 6000,
           disableOnInteraction: false,
         }}
-        effect={"fade"}
+        effect="fade"
         pagination={{
           clickable: true,
         }}
@@ -199,7 +199,7 @@ export default function Home() {
                     "本番は、スタッフによる設営（前日or当日の早朝）とサポートで、オリジナリティ溢れるウェディングパーティーを一緒に作り上げます。",
                 },
               ].map(({ title, description }, index) => (
-                <div className="mb-10" key={index}>
+                <div className="mb-16" key={index}>
                   <p className="mb-4 text-2xl font-bold">
                     <span className="mr-4">{`Step ${index + 1}.`}</span>
                     {title}

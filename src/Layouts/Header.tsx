@@ -4,11 +4,9 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 import awesome from "../assets/icon/awesome.png";
-import facebook from "../assets/icon/facebook.png";
-import instagram from "../assets/icon/instagram.png";
-import youtube from "../assets/icon/youtube.png";
 import Icon from "../components/Icon";
 import { pageList } from "../lib/page";
+import { snsLinks } from "../lib/snsLinks";
 
 export default function Header() {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
@@ -18,25 +16,10 @@ export default function Header() {
     setIsOpen(false);
   }, [pathname]);
 
-  const snsLinks = () => (
-    <>
-      <Icon
-        href="https://www.youtube.com/channel/UCPglpd7wKzyBYzc4GKcfr3g?view_as=subscriber"
-        src={youtube}
-        alt="youtube"
-      />
-      <Icon
-        href="https://www.instagram.com/awesome_camp_inc/"
-        src={instagram}
-        alt="instagram"
-      />
-      <Icon
-        href="https://www.facebook.com/awesomebarbecue.glamping/"
-        src={facebook}
-        alt="facebook"
-      />
-    </>
-  );
+  const snsLink = () =>
+    snsLinks.map(({ href, src, alt }) => (
+      <Icon key={href} href={href} src={src} alt={alt} />
+    ));
 
   return (
     <header className="sticky top-0 z-20 bg-white p-3 font-['Helvetica'] opacity-95 shadow-sm md:-top-12">
@@ -63,7 +46,7 @@ export default function Header() {
             <span className="text-xs"> {jaTitle}</span>
           </Link>
         ))}
-        <div className="flex gap-5">{snsLinks()}</div>
+        <div className="flex gap-5">{snsLink()}</div>
       </nav>
       {isOpen && (
         <div className="fixed top-0 right-0 left-0 bottom-0 flex items-center justify-center bg-white">
@@ -78,7 +61,7 @@ export default function Header() {
                 <span className="text-xs"> {jaTitle}</span>
               </Link>
             ))}
-            <div className="mt-16 flex gap-4">{snsLinks()}</div>
+            <div className="mt-16 flex gap-4">{snsLink()}</div>
           </div>
         </div>
       )}

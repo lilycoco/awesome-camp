@@ -6,7 +6,6 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Typewriter from "typewriter-effect";
 
 import Section from "../../Layouts/Section";
 import back from "../../assets/images/back.jpg";
@@ -25,24 +24,12 @@ import { recommendList } from "../../lib/recommend";
 import { reportList } from "../../lib/report";
 import PlanContent from "./partials/PlanContent";
 import RecommendContent from "./partials/RecommendContent";
-import React from "react";
 import ScrollRevealContainer from "../../components/ScrollRevealContainer";
 
 export default function Home() {
   return (
     <div>
-      <div className="shutter">
-        {/* <div className="type-writer m-auto mb-14 w-fit text-center font-oleo text-[2.8rem] text-6xl leading-normal md:mb-16 md:text-5xl">
-          <Typewriter
-            onInit={(typewriter) => {
-              typewriter
-                .typeString("Have an Awesome Outdoor Wedding!")
-                .pauseFor(500)
-                .start();
-            }}
-          />
-        </div> */}
-      </div>
+      <div className="shutter"></div>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -144,7 +131,7 @@ export default function Home() {
         sectionClass="flex flex-col gap-36 items-center w-full"
       >
         {recommendList.map(({ title, description, src }, index) => (
-          <ScrollRevealContainer>
+          <ScrollRevealContainer key={index}>
             <RecommendContent
               className={index % 2 ? "md:flex-row-reverse" : ""}
               title={title}

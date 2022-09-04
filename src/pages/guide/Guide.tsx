@@ -128,11 +128,8 @@ export default function Guide() {
         </div>
         <>
           {serviceList.map(({ title, description, img }, index) => (
-            <ScrollRevealContainer>
-              <div
-                key={index}
-                className="-gap-10 mb-10 flex flex-col md:flex-row"
-              >
+            <ScrollRevealContainer key={index}>
+              <div className="-gap-10 mb-10 flex flex-col md:flex-row">
                 <div
                   className="z-10 mt-5 -mb-5 -mr-14 block w-full rounded-lg bg-white p-8 opacity-90 shadow-md md:mb-2 md:max-w-2xl"
                   id={`service${index}`}

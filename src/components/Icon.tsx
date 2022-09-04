@@ -3,13 +3,11 @@ export default function Icon({
   href,
   alt,
   className,
-  size = 4,
 }: {
   src?: string;
   href?: string;
   alt?: string;
   className?: string;
-  size?: number;
 }) {
   return (
     <a
@@ -21,7 +19,7 @@ export default function Icon({
       <img
         src={src}
         alt={alt}
-        className={`h-${size} max-w-none object-cover hover:scale-105`}
+        className="h-4 max-w-none object-cover hover:scale-105"
       />
     </a>
   );

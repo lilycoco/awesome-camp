@@ -10,7 +10,7 @@ export default function Footer() {
   const SnsLinks = ({ className }: { className?: string }) => (
     <div className="m-auto mt-12 flex items-center justify-center gap-5">
       {snsLinks.map(({ href, src, alt }) => (
-        <Icon key={href} href={href} src={src} alt={alt} size={5} />
+        <Icon key={href} href={href} src={src} alt={alt} />
       ))}
     </div>
   );
